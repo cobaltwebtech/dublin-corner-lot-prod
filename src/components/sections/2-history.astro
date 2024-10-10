@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import ContentSection from "~/components/content-section.astro";
+import DonateButton from "~/components/donate-button.astro";
+
+// Import images
+import archive from "~/assets/photos/Dublin-Corner-Lot-archive.avif";
+import plaque from "~/assets/photos/Dublin-Corner-Lot-1.avif";
+---
+
+<ContentSection title="History of the Corner Lot" id="history">
+  <Icon slot="above-icon" name="mdi:about" class="size-32 text-green-400" />
+  <Fragment slot="lead">
+    We call it the Corner Lot, but its official name is 
+    <br><span class="text-primary">Pretty Peggy Pepper Park</span>. 
+    <br>The is the history of the Corner Lot.
+  </Fragment>
+  <div class="max-w-screen-xl grid xl:grid-cols-2 gap-8 items-center">
+    <div class="space-y-4">
+      <p class="text-justify text-sm">
+        In 1975, there was a fire that destroyed a local favorite eatery, Black’s Cafe, along with several other businesses located along Patrick Street. Year after year the absentee owner did nothing and Dublin citizens had finally had enough of the dismal state of the space.
+      </p>
+      <p class="text-justify text-sm">
+        In 1995, the year the idea for this park was birthed. This plot of land in the center of town had remained barren, ugly, and neglected for over twenty years. Two women, owners of local businesses, planted a tiny garden on the very corner just to make the statement, “This is gonna change!” 
+      </p>
+    </div>
+    <div class="w-full">
+      <Image
+        class="w-full border-8 border-green-400"
+        src={archive}
+        alt="Dublin Corner Lot before park built"
+        format="avif"
+        width="640"
+      />
+    </div>
+  </div>
+  <div class="space-y-4">
+    <p class="max-w-screen-xl text-justify text-sm">
+      Citizens rallied, plans were made, trucks hauled off debris, and hauled in Erath County fertilizer aka "cow poop." The newly formed Corner Lot Gang kept the project moving. Citizens and local businesses donated labor, supplies, ideas, plants, and equipment. It was truly a community effort! Locals provided entertainment on site for Tuesday Night Under the Stars to raise funds.
+    </p>
+    <Image
+      class="w-8/12 mx-auto border-8 border-green-400"
+      src={plaque}
+      alt="Dublin Corner Lot dedication plaque"
+      format="avif"
+      width="640"
+    />
+    <p class="max-w-screen-xl text-justify text-sm">
+      After an enormous city-wide garage sale under a big circus tent, the purchase price was still out of reach!  That’s when Billy Kloster, then the owner of Dublin Dr Pepper, offered the needed $20,000 in exchange for the right to build a swinging Pretty Peggy Pepper sign on that corner lot.  He had long dreamed of putting up that sign. In honor of Billy Kloster’s generous donation and his dream, there is a plaque officially naming it Pretty Peggy Pepper Park.
+    </p>
+  </div>
+  <DonateButton />
+</ContentSection>

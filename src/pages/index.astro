@@ -1,0 +1,111 @@
+---
+import { AstroFont } from 'astro-font';
+import { join } from 'path';
+import Footer from "~/components/footer.astro";
+import Header from "~/components/header.astro";
+import SectionFirst from "~/components/sections/1-about-us.astro";
+import SectionSecond from "~/components/sections/2-history.astro";
+import SectionThird from "~/components/sections/3-our-mission.astro";
+import Splash from "~/components/splash.astro";
+import "~/styles/index.css";
+
+const { generator, site } = Astro;
+const image = new URL("social.jpg", site);
+const description =
+  "Dublin Corner Lot is a non-profit organization whose mission is to beautify and provide a free and open public space for all to use.";
+---
+
+<!doctype html>
+<html lang="en" class="scrollbar-hide lenis lenis-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>Dublin Corner Lot</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="Dublin Corner Lot" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!--Load and define fonts -->
+    <AstroFont
+      config={[
+        {
+          preload: false,
+          display: 'swap',
+          name: 'Avenir',
+          fallback: 'sans-serif',
+          src: [
+          {
+              weight: '100',
+              style: 'normal',
+              path: join(process.cwd(), 'public', 'fonts', 'Avenir-Light.woff2')
+            },
+            {
+              weight: '400',
+              style: 'normal',
+              path: join(process.cwd(), 'public', 'fonts', 'Avenir-Medium.woff2')
+            },
+            {
+              weight: '800',
+              preload: true,
+              style: 'normal',
+              path: join(process.cwd(), 'public', 'fonts', 'Avenir-Heavy.woff2')
+            },
+            {
+              weight: '900',
+              style: 'normal',
+              path: join(process.cwd(), 'public', 'fonts', 'Avenir-Black.woff2')
+            }
+          ]
+        }
+      ]}
+    />
+   
+    <!--Import Lenis smooth scroll script -->
+    <script>
+      import "~/assets/scripts/lenisSmoothScroll.js";
+    </script>    
+
+    <!-- initialize theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+  </head>
+  <body
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <Header />
+    <Splash />
+    <SectionFirst />
+    <SectionSecond />
+    <SectionThird />
+    <Footer />
+  </body>
+</html>

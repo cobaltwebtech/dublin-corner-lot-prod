@@ -53,29 +53,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/markdown-remark@npm:5.2.0":
-  version: 5.2.0
-  resolution: "@astrojs/markdown-remark@npm:5.2.0"
+"@astrojs/markdown-remark@npm:5.3.0":
+  version: 5.3.0
+  resolution: "@astrojs/markdown-remark@npm:5.3.0"
   dependencies:
     "@astrojs/prism": "npm:3.1.0"
     github-slugger: "npm:^2.0.0"
-    hast-util-from-html: "npm:^2.0.1"
+    hast-util-from-html: "npm:^2.0.3"
     hast-util-to-text: "npm:^4.0.2"
     import-meta-resolve: "npm:^4.1.0"
     mdast-util-definitions: "npm:^6.0.0"
     rehype-raw: "npm:^7.0.0"
-    rehype-stringify: "npm:^10.0.0"
+    rehype-stringify: "npm:^10.0.1"
     remark-gfm: "npm:^4.0.0"
     remark-parse: "npm:^11.0.0"
-    remark-rehype: "npm:^11.1.0"
+    remark-rehype: "npm:^11.1.1"
     remark-smartypants: "npm:^3.0.2"
-    shiki: "npm:^1.10.3"
+    shiki: "npm:^1.22.0"
     unified: "npm:^11.0.5"
     unist-util-remove-position: "npm:^5.0.0"
     unist-util-visit: "npm:^5.0.0"
     unist-util-visit-parents: "npm:^6.0.1"
-    vfile: "npm:^6.0.2"
-  checksum: 10c0/d7227e3cbb66d328a4681b3c9e2b90b45b92db4ae9068794a1acf6023cea7be33d666f05899be980db76a3ff3bf4393d5ee0ee34a012963e4e9aa100c8a6f87b
+    vfile: "npm:^6.0.3"
+  checksum: 10c0/b42d38940cef4ba700dcf9996b3fd631bd1ef560a6619cb5c7a5e9b3a6ef5ff7c6064aeba1b50e9ada904ad930b21f60e352f9c79d38d6ce4da4091e5b3a3c0c
   languageName: node
   linkType: hard
 
@@ -88,17 +88,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/tailwind@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "@astrojs/tailwind@npm:5.1.1"
+"@astrojs/tailwind@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "@astrojs/tailwind@npm:5.1.2"
   dependencies:
     autoprefixer: "npm:^10.4.20"
-    postcss: "npm:^8.4.45"
+    postcss: "npm:^8.4.47"
     postcss-load-config: "npm:^4.0.2"
   peerDependencies:
     astro: ^3.0.0 || ^4.0.0 || ^5.0.0-beta.0
     tailwindcss: ^3.0.24
-  checksum: 10c0/77a983e320eb20857fb8f2e55c8fedb1e4e2698d38d61fe14dfcb1a0b9c56242f471d7aa614b24418a2b79161ed12269fc021615bc4c2e7a4b7289dcdfae7e4c
+  checksum: 10c0/d465d8bea60b7424d42b7336966aafd72d738578e659887b8cb6a8b71444b5e7e056a957e1052a608dacc6d71f0553963b916fc03ec2d069031dac5702a042fe
   languageName: node
   linkType: hard
 
@@ -128,15 +128,15 @@ __metadata:
   linkType: hard
 
 "@babel/compat-data@npm:^7.25.7":
-  version: 7.25.7
-  resolution: "@babel/compat-data@npm:7.25.7"
-  checksum: 10c0/e5cc915abdd18d021236474a96606b2d4a915c4fb620c1ad776b8a08d91111e788cb3b7e9bad43593d4e0bfa4f06894357bcb0984102de1861b9e7322b6bc9f8
+  version: 7.25.8
+  resolution: "@babel/compat-data@npm:7.25.8"
+  checksum: 10c0/8b81c17580e5fb4cbb6a3c52079f8c283fc59c0c6bd2fe14cfcf9c44b32d2eaab71b02c5633e2c679f5896f73f8ac4036ba2e67a4c806e8f428e4b11f526d7f4
   languageName: node
   linkType: hard
 
 "@babel/core@npm:^7.25.7":
-  version: 7.25.7
-  resolution: "@babel/core@npm:7.25.7"
+  version: 7.25.8
+  resolution: "@babel/core@npm:7.25.8"
   dependencies:
     "@ampproject/remapping": "npm:^2.2.0"
     "@babel/code-frame": "npm:^7.25.7"
@@ -144,16 +144,16 @@ __metadata:
     "@babel/helper-compilation-targets": "npm:^7.25.7"
     "@babel/helper-module-transforms": "npm:^7.25.7"
     "@babel/helpers": "npm:^7.25.7"
-    "@babel/parser": "npm:^7.25.7"
+    "@babel/parser": "npm:^7.25.8"
     "@babel/template": "npm:^7.25.7"
     "@babel/traverse": "npm:^7.25.7"
-    "@babel/types": "npm:^7.25.7"
+    "@babel/types": "npm:^7.25.8"
     convert-source-map: "npm:^2.0.0"
     debug: "npm:^4.1.0"
     gensync: "npm:^1.0.0-beta.2"
     json5: "npm:^2.2.3"
     semver: "npm:^6.3.1"
-  checksum: 10c0/dad20af39624086afc3a0910bd97ae712c9ad0e9dda09fc5da93876e8ea1802b63ddd81c44f4aa8a9834db46de801eaab1ce9b81ab54b4fe907ae052c24de136
+  checksum: 10c0/8411ea506e6f7c8a39ab5c1524b00589fa3b087edb47389708f7fe07170929192171734666e3ea10b95a951643a531a6d09eedfe071572c9ea28516646265086
   languageName: node
   linkType: hard
 
@@ -275,14 +275,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.25.4, @babel/parser@npm:^7.25.7":
-  version: 7.25.7
-  resolution: "@babel/parser@npm:7.25.7"
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.25.4, @babel/parser@npm:^7.25.7, @babel/parser@npm:^7.25.8":
+  version: 7.25.8
+  resolution: "@babel/parser@npm:7.25.8"
   dependencies:
-    "@babel/types": "npm:^7.25.7"
+    "@babel/types": "npm:^7.25.8"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: 10c0/b771469bb6b636c18a8d642b9df3c73913c3860a979591e1a29a98659efd38b81d3e393047b5251fe382d4c82c681c12da9ce91c98d69316d2604d155a214bcf
+  checksum: 10c0/a1a13845b7e8dda4c970791814a4bbf60004969882f18f470e260ad822d2e1f8941948f851e9335895563610f240fa6c98481ce8019865e469502bbf21daafa4
   languageName: node
   linkType: hard
 
@@ -338,14 +338,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.20.7, @babel/types@npm:^7.25.4, @babel/types@npm:^7.25.7":
-  version: 7.25.7
-  resolution: "@babel/types@npm:7.25.7"
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.20.7, @babel/types@npm:^7.25.4, @babel/types@npm:^7.25.7, @babel/types@npm:^7.25.8":
+  version: 7.25.8
+  resolution: "@babel/types@npm:7.25.8"
   dependencies:
     "@babel/helper-string-parser": "npm:^7.25.7"
     "@babel/helper-validator-identifier": "npm:^7.25.7"
     to-fast-properties: "npm:^2.0.0"
-  checksum: 10c0/e03e1e2e08600fa1e8eb90632ac9c253dd748176c8d670d85f85b0dc83a0573b26ae748a1cbcb81f401903a3d95f43c3f4f8d516a5ed779929db27de56289633
+  checksum: 10c0/55ca2d6df6426c98db2769ce884ce5e9de83a512ea2dd7bcf56c811984dc14351cacf42932a723630c5afcff2455809323decd645820762182f10b7b5252b59f
   languageName: node
   linkType: hard
 
@@ -535,7 +535,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/mdi@npm:^1.2.0":
+"@iconify-json/mdi@npm:^1.2.1":
   version: 1.2.1
   resolution: "@iconify-json/mdi@npm:1.2.1"
   dependencies:
@@ -1375,13 +1375,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^4.15.12":
-  version: 4.15.12
-  resolution: "astro@npm:4.15.12"
+"astro@npm:^4.16.0":
+  version: 4.16.0
+  resolution: "astro@npm:4.16.0"
   dependencies:
     "@astrojs/compiler": "npm:^2.10.3"
     "@astrojs/internal-helpers": "npm:0.4.1"
-    "@astrojs/markdown-remark": "npm:5.2.0"
+    "@astrojs/markdown-remark": "npm:5.3.0"
     "@astrojs/telemetry": "npm:3.1.0"
     "@babel/core": "npm:^7.25.7"
     "@babel/plugin-transform-react-jsx": "npm:^7.25.7"
@@ -1449,7 +1449,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: 10c0/936d7805102d4732d5f0afee8646fc67e7ef6ee25d6ed10b84a7e4c1836592061ff0b6165051d41755938ab0a764b65ede1712878577bae2399e3a87ccc4d864
+  checksum: 10c0/0aec66bfad7bc506c9f0f277e7791f821f5fc3178dfdd29ad5362656cea0bbba47362a8b579beb0edb11f20351520cea9e33078e577f28003889adaf0d9dda1f
   languageName: node
   linkType: hard
 
@@ -2092,25 +2092,25 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dublin-corner-lot@workspace:."
   dependencies:
-    "@astrojs/tailwind": "npm:^5.1.1"
+    "@astrojs/tailwind": "npm:^5.1.2"
     "@iconify-json/fa-brands": "npm:^1.2.0"
-    "@iconify-json/mdi": "npm:^1.2.0"
+    "@iconify-json/mdi": "npm:^1.2.1"
     "@types/micromodal": "npm:^0.3.5"
-    astro: "npm:^4.15.12"
+    astro: "npm:^4.16.0"
     astro-compressor: "npm:^0.4.1"
     astro-font: "npm:^0.1.81"
     astro-icon: "npm:^1.1.1"
-    lenis: "npm:^1.1.13"
+    lenis: "npm:^1.1.14"
     micromodal: "npm:^0.4.10"
     prettier: "npm:^3.3.3"
     prettier-plugin-astro: "npm:^0.14.1"
-    prettier-plugin-tailwindcss: "npm:^0.6.6"
+    prettier-plugin-tailwindcss: "npm:^0.6.8"
     rimraf: "npm:^6.0.1"
     sharp: "npm:^0.33.5"
     tailwindcss: "npm:^3.4.13"
     tailwindcss-fluid-type: "npm:^2.0.6"
     tiny-invariant: "npm:^1.3.3"
-    typescript: "npm:^5.6.2"
+    typescript: "npm:^5.6.3"
   languageName: unknown
   linkType: soft
 
@@ -2474,13 +2474,13 @@ __metadata:
   linkType: hard
 
 "form-data@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "form-data@npm:4.0.0"
+  version: 4.0.1
+  resolution: "form-data@npm:4.0.1"
   dependencies:
     asynckit: "npm:^0.4.0"
     combined-stream: "npm:^1.0.8"
     mime-types: "npm:^2.1.12"
-  checksum: 10c0/cb6f3ac49180be03ff07ba3ff125f9eba2ff0b277fb33c7fc47569fc5e616882c5b1c69b9904c4c4187e97dd0419dd03b134174756f296dec62041e6527e2c6e
+  checksum: 10c0/bb102d570be8592c23f4ea72d7df9daa50c7792eb0cf1c5d7e506c1706e7426a4e4ae48a35b109e91c85f1c0ec63774a21ae252b66f4eb981cb8efef7d0463c8
   languageName: node
   linkType: hard
 
@@ -2657,7 +2657,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hast-util-from-html@npm:^2.0.0, hast-util-from-html@npm:^2.0.1":
+"hast-util-from-html@npm:^2.0.0, hast-util-from-html@npm:^2.0.3":
   version: 2.0.3
   resolution: "hast-util-from-html@npm:2.0.3"
   dependencies:
@@ -3141,20 +3141,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lenis@npm:^1.1.13":
-  version: 1.1.13
-  resolution: "lenis@npm:1.1.13"
+"lenis@npm:^1.1.14":
+  version: 1.1.14
+  resolution: "lenis@npm:1.1.14"
   dependencies:
     "@darkroom.engineering/tempus": "npm:^0.0.46"
   peerDependencies:
     react: ">=17.0.0"
-    react-dom: ">=17.0.0"
+    vue: ">=3.0.0"
   peerDependenciesMeta:
     react:
       optional: true
-    react-dom:
+    vue:
       optional: true
-  checksum: 10c0/e8af4cd24350f471fc6ef291bb3d5064a1296d9c048daafeaab8bd656a6342fb3f9e3ff25557073a731f0264fa509538b7bed3c3b200c4569621b45af7631340
+  checksum: 10c0/426cee9d1cf1d816ad5d7dd051698c17ab1e3b276e3248d602e9314794114a9322b051fc3c8cd27e5f4cab94cabb7aa21445d4f84bccf3518304cd730ef792b0
   languageName: node
   linkType: hard
 
@@ -4461,7 +4461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.23, postcss@npm:^8.4.43, postcss@npm:^8.4.45":
+"postcss@npm:^8.4.23, postcss@npm:^8.4.43, postcss@npm:^8.4.47":
   version: 8.4.47
   resolution: "postcss@npm:8.4.47"
   dependencies:
@@ -4494,7 +4494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.6.6":
+"prettier-plugin-tailwindcss@npm:^0.6.8":
   version: 0.6.8
   resolution: "prettier-plugin-tailwindcss@npm:0.6.8"
   peerDependencies:
@@ -4673,7 +4673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rehype-stringify@npm:^10.0.0":
+"rehype-stringify@npm:^10.0.0, rehype-stringify@npm:^10.0.1":
   version: 10.0.1
   resolution: "rehype-stringify@npm:10.0.1"
   dependencies:
@@ -4722,7 +4722,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-rehype@npm:^11.1.0":
+"remark-rehype@npm:^11.1.1":
   version: 11.1.1
   resolution: "remark-rehype@npm:11.1.1"
   dependencies:
@@ -4806,13 +4806,13 @@ __metadata:
   linkType: hard
 
 "retext-smartypants@npm:^6.0.0":
-  version: 6.1.1
-  resolution: "retext-smartypants@npm:6.1.1"
+  version: 6.2.0
+  resolution: "retext-smartypants@npm:6.2.0"
   dependencies:
     "@types/nlcst": "npm:^2.0.0"
     nlcst-to-string: "npm:^4.0.0"
     unist-util-visit: "npm:^5.0.0"
-  checksum: 10c0/46c8bb97291cbf501bfde0069e48ce4a299efd0b07b71e7863339d7bcb9f955a0629d1b98fb2b4beef563e0a8b3c9698d36063c05a6b3bb012474b9adcafb044
+  checksum: 10c0/36f925353dd7f31df642bca2493524a8daee15f9b0e0dfe7fb8982462d23ccb12a99864989db22f0bacb6d7fea1f696ba96e031d3fbac4f013e1c95ef3fed881
   languageName: node
   linkType: hard
 
@@ -5073,7 +5073,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^1.10.3, shiki@npm:^1.22.0":
+"shiki@npm:^1.22.0":
   version: 1.22.0
   resolution: "shiki@npm:1.22.0"
   dependencies:
@@ -5443,8 +5443,8 @@ __metadata:
   linkType: hard
 
 "tsconfck@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "tsconfck@npm:3.1.3"
+  version: 3.1.4
+  resolution: "tsconfck@npm:3.1.4"
   peerDependencies:
     typescript: ^5.0.0
   peerDependenciesMeta:
@@ -5452,7 +5452,7 @@ __metadata:
       optional: true
   bin:
     tsconfck: bin/tsconfck.js
-  checksum: 10c0/64f7a8ed0a6d36b0902dfc0075e791d2242f7634644f124343ec0dec4f3f70092f929c5a9f59496d51883aa81bb1e595deb92a219593575d2e75b849064713d1
+  checksum: 10c0/5120e91b3388574b449d57d08f45d05d9966cf4b9d6aa1018652c1fff6d7d37b1ed099b07e6ebf6099aa40b8a16968dd337198c55b7274892849112b942861ed
   languageName: node
   linkType: hard
 
@@ -5470,7 +5470,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.6.2":
+"typescript@npm:^5.6.3":
   version: 5.6.3
   resolution: "typescript@npm:5.6.3"
   bin:
@@ -5480,7 +5480,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.6.2#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.6.3#optional!builtin<compat/typescript>":
   version: 5.6.3
   resolution: "typescript@patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"
   bin:
@@ -5672,7 +5672,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vfile@npm:^6.0.0, vfile@npm:^6.0.2, vfile@npm:^6.0.3":
+"vfile@npm:^6.0.0, vfile@npm:^6.0.3":
   version: 6.0.3
   resolution: "vfile@npm:6.0.3"
   dependencies:

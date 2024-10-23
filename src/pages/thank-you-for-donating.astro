@@ -3,10 +3,7 @@ import { AstroFont } from 'astro-font';
 import { join } from 'path';
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
-import SectionFirst from "~/components/sections/1-about-us.astro";
-import SectionSecond from "~/components/sections/2-history.astro";
-import SectionThird from "~/components/sections/3-our-mission.astro";
-import Splash from "~/components/splash.astro";
+import Donation from "~/components/sections/donation-received.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
@@ -26,6 +23,7 @@ const description =
 
     <title>Dublin Corner Lot</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="noindex">
 
     <!-- social media -->
     <meta property="og:title" content="Dublin Corner Lot" />
@@ -104,10 +102,7 @@ const description =
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
-    <Splash />
-    <SectionFirst />
-    <SectionSecond />
-    <SectionThird />
+    <Donation />
     <Footer />
   </body>
 </html>

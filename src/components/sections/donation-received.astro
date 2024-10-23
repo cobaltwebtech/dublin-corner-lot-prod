@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import HomeButton from "~/components/home-button.astro";
+
+// Import images
+import waterFountain from "~/assets/photos/Dublin-Corner-Lot-3.avif"
+---
+
+<section
+  class="px-8 py-48 flex scroll-mt-24 flex-col items-center gap-4 space-y-8"
+>
+  <Icon name="donation-heart" class="size-36 text-green-400" />
+  <div class="flex flex-col items-center gap-4">
+    <h2
+      class="gradient-text text-center font-black tracking-tight text-6xl"
+    >
+      Thank You for Donating!
+    </h2>
+  </div>
+  <p class="max-w-xl text-center font-normal text-xl">
+    Your donation has been received.
+  </p>
+  <p class="max-w-4xl text-justify font-normal text-md">
+    A payment to Dublin Corner Lot, Inc. will appear on your statement. A donation receipt will be sent to your email. Donations are classified as tax deductible expenses as we are a 501 (c) (3) non-profit organization. 
+    <br>Our EIN is: 75-2784640
+  </p>
+  <HomeButton />
+  <div class="max-w-screen-xl grid xl:grid-cols-2 gap-8 items-center">
+    <div class="w-full">
+      <Image
+        class="w-full border-8 border-green-400"
+        src={waterFountain}
+        alt="Dublin Corner Lot water fountain"
+        format="avif"
+        width="640"
+      />
+    </div>
+    <div class="space-y-8">
+      <p class="text-justify text-md">
+        Your generous charitable contribution allows us to continue our mission of maintaining and creating a beautiful open green space for all to use.
+      </p>
+      <p class="text-justify font-extrabold text-md text-gold-600">
+        Thank You!
+      </p>
+    </div>
+  </div>
+</section>

@@ -418,13 +418,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@darkroom.engineering/tempus@npm:^0.0.46":
-  version: 0.0.46
-  resolution: "@darkroom.engineering/tempus@npm:0.0.46"
-  checksum: 10c0/20c48ff5b6a1a0dc1b9af253de3b06ac7d66c6ffefa86a0b2efe06f2a9a96135fd1e7b7ac72e8d347489564521e8ac7aa12e13cb60a1ffd0908cca78b764c584
-  languageName: node
-  linkType: hard
-
 "@emnapi/runtime@npm:^1.2.0":
   version: 1.3.0
   resolution: "@emnapi/runtime@npm:1.3.0"
@@ -1487,20 +1480,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-icon@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "astro-icon@npm:1.1.1"
+"astro-icon@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "astro-icon@npm:1.1.2"
   dependencies:
     "@iconify/tools": "npm:^4.0.5"
     "@iconify/types": "npm:^2.0.0"
     "@iconify/utils": "npm:^2.1.30"
-  checksum: 10c0/3e9e8f8b5b773488dbf8a7e20457bf0d1b8b833f4c7e289336ddd1eae9b92be834d4623c1e7eb3e1faa7ec3ad544b3fdc66f3adac6cd44822d24875e0b10f717
+  checksum: 10c0/cb99c46c5860ffe9ad6d6f085a9feae481d0c8ed855d88dbdd690ccc6e587ea04b160fefa073a565343d92589bcf285ab6836d8185ede5c45b660c0b6d0d0fdd
   languageName: node
   linkType: hard
 
-"astro@npm:^4.16.8":
-  version: 4.16.8
-  resolution: "astro@npm:4.16.8"
+"astro@npm:^4.16.13":
+  version: 4.16.13
+  resolution: "astro@npm:4.16.13"
   dependencies:
     "@astrojs/compiler": "npm:^2.10.3"
     "@astrojs/internal-helpers": "npm:0.4.1"
@@ -1544,7 +1537,7 @@ __metadata:
     micromatch: "npm:^4.0.8"
     mrmime: "npm:^2.0.0"
     neotraverse: "npm:^0.6.18"
-    ora: "npm:^8.1.0"
+    ora: "npm:^8.1.1"
     p-limit: "npm:^6.1.0"
     p-queue: "npm:^8.0.1"
     preferred-pm: "npm:^4.0.0"
@@ -1570,7 +1563,7 @@ __metadata:
       optional: true
   bin:
     astro: astro.js
-  checksum: 10c0/692c19970c5dfb5029a19f57556dcd9070645c01a5d8b5fa8e593c317c3e289c24cda19ea5a556e4a381d7c4b7d32060217c4d178c49834e0d31206b8c95e761
+  checksum: 10c0/15bf8967954de6a35dbaa6ba084acd101e8cf0fe65af3cddcef1c275fab65f6dc8e576a6782ebe66cea8b150bef2c755e067cdedfdb62fa13eba059ced269ef1
   languageName: node
   linkType: hard
 
@@ -2217,11 +2210,11 @@ __metadata:
     "@iconify-json/fa-brands": "npm:^1.2.0"
     "@iconify-json/mdi": "npm:^1.2.1"
     "@types/micromodal": "npm:^0.3.5"
-    astro: "npm:^4.16.8"
+    astro: "npm:^4.16.13"
     astro-compressor: "npm:^0.4.1"
     astro-font: "npm:^0.1.81"
-    astro-icon: "npm:^1.1.1"
-    lenis: "npm:^1.1.14"
+    astro-icon: "npm:^1.1.2"
+    lenis: "npm:^1.1.16"
     micromodal: "npm:^0.4.10"
     prettier: "npm:^3.3.3"
     prettier-plugin-astro: "npm:^0.14.1"
@@ -3262,11 +3255,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lenis@npm:^1.1.14":
-  version: 1.1.14
-  resolution: "lenis@npm:1.1.14"
-  dependencies:
-    "@darkroom.engineering/tempus": "npm:^0.0.46"
+"lenis@npm:^1.1.16":
+  version: 1.1.16
+  resolution: "lenis@npm:1.1.16"
   peerDependencies:
     react: ">=17.0.0"
     vue: ">=3.0.0"
@@ -3275,7 +3266,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/426cee9d1cf1d816ad5d7dd051698c17ab1e3b276e3248d602e9314794114a9322b051fc3c8cd27e5f4cab94cabb7aa21445d4f84bccf3518304cd730ef792b0
+  checksum: 10c0/b64137f50a37271faa3b53328f9cf7b984284b4bf78ab75b6e9a1defacbe5da46d8440da675322acc2925def320fc778a29c60d3b10fed1e51286b4c673bcb02
   languageName: node
   linkType: hard
 
@@ -4269,9 +4260,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ora@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "ora@npm:8.1.0"
+"ora@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "ora@npm:8.1.1"
   dependencies:
     chalk: "npm:^5.3.0"
     cli-cursor: "npm:^5.0.0"
@@ -4282,7 +4273,7 @@ __metadata:
     stdin-discarder: "npm:^0.2.2"
     string-width: "npm:^7.2.0"
     strip-ansi: "npm:^7.1.0"
-  checksum: 10c0/4ac9a6dd7fe915a354680f33ced21ee96d13d3c5ab0dc00b3c3ba9e3695ed141b1d045222990f5a71a9a91f801042a0b0d32e58dfc5509ff9b81efdd3fcf6339
+  checksum: 10c0/996a81a9e997481339de3a7996c56131ea292c0a0e9e42d1cd454e2390f1ce7015ec925dcdd29e3d74dc5d037a4aa1877e575b491555507bcd9f219df760a63f
   languageName: node
   linkType: hard
 

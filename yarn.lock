@@ -1340,14 +1340,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-icon@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "astro-icon@npm:1.1.2"
+"astro-icon@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "astro-icon@npm:1.1.4"
   dependencies:
     "@iconify/tools": "npm:^4.0.5"
     "@iconify/types": "npm:^2.0.0"
     "@iconify/utils": "npm:^2.1.30"
-  checksum: 10c0/cb99c46c5860ffe9ad6d6f085a9feae481d0c8ed855d88dbdd690ccc6e587ea04b160fefa073a565343d92589bcf285ab6836d8185ede5c45b660c0b6d0d0fdd
+  checksum: 10c0/abb8d21eaf750548a76fc172d057a4f18fe28a96d2434e6b5f1bad57e98890a64866db2b377d7a6320ec550e4b3b56a6fe2150e412a96666565e9f126de702e2
   languageName: node
   linkType: hard
 
@@ -2046,7 +2046,7 @@ __metadata:
     astro: "npm:^4.16.13"
     astro-compressor: "npm:^0.4.1"
     astro-font: "npm:^0.1.81"
-    astro-icon: "npm:^1.1.2"
+    astro-icon: "npm:^1.1.4"
     lenis: "npm:^1.1.16"
     micromodal: "npm:^0.4.10"
     prettier: "npm:^3.3.3"
@@ -5436,11 +5436,11 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A^5.6.3#optional!builtin<compat/typescript>":
   version: 5.6.3
-  resolution: "typescript@patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"
+  resolution: "typescript@patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/7c9d2e07c81226d60435939618c91ec2ff0b75fbfa106eec3430f0fcf93a584bc6c73176676f532d78c3594fe28a54b36eb40b3d75593071a7ec91301533ace7
+  checksum: 10c0/ac8307bb06bbfd08ae7137da740769b7d8c3ee5943188743bb622c621f8ad61d244767480f90fbd840277fbf152d8932aa20c33f867dea1bb5e79b187ca1a92f
   languageName: node
   linkType: hard
 

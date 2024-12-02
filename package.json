@@ -15,7 +15,7 @@
     "clean": "rimraf dist .astro node_modules yarn.lock .yarn"
   },
   "dependencies": {
-    "astro-compressor": "^0.4.1",
+    "astro-compressor": "^1.0.0",
     "astro-font": "^0.1.81",
     "lenis": "^1.1.17",
     "micromodal": "^0.4.10",

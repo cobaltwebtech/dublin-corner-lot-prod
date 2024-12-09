@@ -2047,7 +2047,7 @@ __metadata:
     astro-compressor: "npm:^0.4.1"
     astro-font: "npm:^0.1.81"
     astro-icon: "npm:^1.1.4"
-    lenis: "npm:^1.1.17"
+    lenis: "npm:^1.1.18"
     micromodal: "npm:^0.4.10"
     prettier: "npm:^3.3.3"
     prettier-plugin-astro: "npm:^0.14.1"
@@ -3081,9 +3081,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lenis@npm:^1.1.17":
-  version: 1.1.17
-  resolution: "lenis@npm:1.1.17"
+"lenis@npm:^1.1.18":
+  version: 1.1.18
+  resolution: "lenis@npm:1.1.18"
   peerDependencies:
     react: ">=17.0.0"
     vue: ">=3.0.0"
@@ -3092,7 +3092,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/64508d8cb2148d71f707bcaf4f2caf4219f5647f36b14e2aa8093dddda8ae7c6d85d831e89d06573966289e326f012015a38b3744a493671af359e5c70ef9cdd
+  checksum: 10c0/7e89290940580741900e6181d0137bb61c68c44dc7fd58eae9f6546316a172121a4df2f55a294135f43dec28a3ca1cbfd95455635d4db733d7885f8d8fefc4cc
   languageName: node
   linkType: hard
 
@@ -5438,11 +5438,11 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A^5.7.2#optional!builtin<compat/typescript>":
   version: 5.7.2
-  resolution: "typescript@patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5786d5"
+  resolution: "typescript@patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5adc0c"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/f3b8082c9d1d1629a215245c9087df56cb784f9fb6f27b5d55577a20e68afe2a889c040aacff6d27e35be165ecf9dca66e694c42eb9a50b3b2c451b36b5675cb
+  checksum: 10c0/c891ccf04008bc1305ba34053db951f8a4584b4a1bf2f68fd972c4a354df3dc5e62c8bfed4f6ac2d12e5b3b1c49af312c83a651048f818cd5b4949d17baacd79
   languageName: node
   linkType: hard
 

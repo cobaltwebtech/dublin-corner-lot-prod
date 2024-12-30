@@ -1345,14 +1345,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro-icon@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "astro-icon@npm:1.1.4"
+"astro-icon@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "astro-icon@npm:1.1.5"
   dependencies:
     "@iconify/tools": "npm:^4.0.5"
     "@iconify/types": "npm:^2.0.0"
     "@iconify/utils": "npm:^2.1.30"
-  checksum: 10c0/abb8d21eaf750548a76fc172d057a4f18fe28a96d2434e6b5f1bad57e98890a64866db2b377d7a6320ec550e4b3b56a6fe2150e412a96666565e9f126de702e2
+  checksum: 10c0/036a608928036868c727ec041cb1ef7e42000dbb272ad4357579678147cb1a3fd1be97a8e8d6f457ee58bcd9ac09f032da395b068f79a2ddd384f4aee44e91e4
   languageName: node
   linkType: hard
 
@@ -2051,7 +2051,7 @@ __metadata:
     astro: "npm:^4.16.18"
     astro-compressor: "npm:^1.0.0"
     astro-font: "npm:^0.1.81"
-    astro-icon: "npm:^1.1.4"
+    astro-icon: "npm:^1.1.5"
     lenis: "npm:^1.1.18"
     micromodal: "npm:^0.4.10"
     prettier: "npm:^3.4.2"

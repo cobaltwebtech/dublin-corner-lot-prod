@@ -2052,7 +2052,7 @@ __metadata:
     astro-compressor: "npm:^1.0.0"
     astro-font: "npm:^0.1.81"
     astro-icon: "npm:^1.1.4"
-    lenis: "npm:^1.1.18"
+    lenis: "npm:^1.1.19"
     micromodal: "npm:^0.4.10"
     prettier: "npm:^3.4.2"
     prettier-plugin-astro: "npm:^0.14.1"
@@ -3079,9 +3079,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lenis@npm:^1.1.18":
-  version: 1.1.18
-  resolution: "lenis@npm:1.1.18"
+"lenis@npm:^1.1.19":
+  version: 1.1.19
+  resolution: "lenis@npm:1.1.19"
   peerDependencies:
     react: ">=17.0.0"
     vue: ">=3.0.0"
@@ -3090,7 +3090,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/7e89290940580741900e6181d0137bb61c68c44dc7fd58eae9f6546316a172121a4df2f55a294135f43dec28a3ca1cbfd95455635d4db733d7885f8d8fefc4cc
+  checksum: 10c0/c7eed03e3dd466d53892cd0c21091e4a36ad8cf10eed9c61b39c7b5ce9b4a4b7f05b82bb359c7e20fdf63793d97934dcb15fd41de31de41929d4ab77f1ea4dc1
   languageName: node
   linkType: hard
 

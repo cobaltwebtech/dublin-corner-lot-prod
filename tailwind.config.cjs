@@ -59,6 +59,15 @@ module.exports = {
       borderColor: {
         default: "var(--color-border)",
       },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 4s cubic-bezier(0.32, 0, 0.67, 0)',
+      },
     },
   },
   corePlugins: {

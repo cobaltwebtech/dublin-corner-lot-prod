@@ -1,9 +1,11 @@
 # build output
 dist/
+.vercel/
 
 # generated types
 .astro/
 .yarn/
+yarn.lock
 
 # dependencies
 node_modules/

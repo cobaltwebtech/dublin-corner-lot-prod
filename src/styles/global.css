@@ -1,21 +1,129 @@
-/* TODO: consider creating <Button> and <GradientText> components */
-a,
-.btn {
-  @apply transition-colors duration-200;
-  @apply hover:text-secondary;
-  @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+@import "tailwindcss";
+@import "~/styles/lenis.css";
+
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  /* Font Family */
+  --default-font-family: "Avenir", system-ui, -apple-system, sans-serif;
+  /* Color Palette */
+  --color-current: currentColor;
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+
+  --color-green-50: #edf8ec;
+  --color-green-100: #dcf1da;
+  --color-green-200: #bae3b5;
+  --color-green-300: #98d591;
+  --color-green-400: #76c76c;
+  --color-green-500: #54b948;
+  --color-green-600: #439439;
+  --color-green-700: #326f2b;
+  --color-green-800: #214a1c;
+  --color-green-900: #10250e;
+
+  --color-gold-50: #fffae6;
+  --color-gold-100: #fff5cd;
+  --color-gold-200: #ffec9b;
+  --color-gold-300: #ffe369;
+  --color-gold-400: #ffda36;
+  --color-gold-500: #ffd105;
+  --color-gold-600: #cca704;
+  --color-gold-700: #997d03;
+  --color-gold-800: #665302;
+  --color-gold-900: #4c3e01;
+
+  --color-blue-50: #ebf8fd;
+  --color-blue-100: #d7f1fb;
+  --color-blue-200: #afe4f7;
+  --color-blue-300: #88d6f4;
+  --color-blue-400: #60c9f0;
+  --color-blue-500: #39bced;
+  --color-blue-600: #2d96bd;
+  --color-blue-700: #22708e;
+  --color-blue-800: #164b5e;
+  --color-blue-900: #113847;
+  /* Animations */
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  --animate-fade-in: fade-in 4s cubic-bezier(0.32, 0, 0.67, 0);
 }
 
-.gradient-text {
-  @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-gold-500 via-green-500 to-blue-500;
+/* Light and Dark mode colors */
+@layer base {
+  [data-theme="light"] {
+    --color-primary: var(--color-gold-600);
+    --color-secondary: var(--color-fuchsia-500);
+    --color-text: var(--color-green-900);
+    --color-text-offset: var(--color-gray-600);
+    --color-background: var(--color-green-100);
+    --color-background-offset: var(--color-green-200);
+    --color-border: var(--color-green-300);
+  }
+
+  [data-theme="dark"] {
+    --color-primary: var(--color-gold-400);
+    --color-secondary: var(--color-fuchsia-700);
+    --color-text: var(--color-green-100);
+    --color-text-offset: var(--color-gray-400);
+    --color-background: var(--color-green-900);
+    --color-background-offset: var(--color-green-800);
+    --color-border: var(--color-green-600);
+  }
+}
+/* Custom Utilities */
+@utility text-default {
+  color: var(--color-text);
+}
+@utility text-offset {
+  color: var(--color-text-offset);
+}
+@utility bg-default {
+  background-color: var(--color-background);
+}
+@utility bg-offset {
+  background-color: var(--color-background-offset);
+}
+@utility border-default {
+  border-color: var(--color-border);
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
+/* Custom components */
+@layer components {
+  a,
+  .btn {
+    transition: color 200ms;
+    &:hover {
+      color: var(--color-secondary);
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--color-secondary);
+    }
+  }
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  .gradient-text {
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(
+      to bottom right,
+      var(--color-gold-500),
+      var(--color-green-500),
+      var(--color-blue-500)
+    );
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }

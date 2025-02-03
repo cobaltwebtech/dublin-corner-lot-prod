@@ -1,10 +1,10 @@
 ---
-import { AstroFont } from 'astro-font';
-import { join } from 'path';
+import { AstroFont } from "astro-font";
+import { join } from "path";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/header.astro";
 import Donation from "~/components/sections/donation-received.astro";
-import "~/styles/index.css";
+import "~/styles/global.css";
 
 const { generator, site } = Astro;
 const umamiId = import.meta.env.UMAMI_WEBSITE_ID;
@@ -21,9 +21,9 @@ const description =
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="generator" content={generator} />
 
-    <title>Dublin Corner Lot</title>
+    <title>Thank You for Donating | Dublin Corner Lot</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="noindex">
+    <meta name="robots" content="noindex" />
 
     <!-- social media -->
     <meta property="og:title" content="Dublin Corner Lot" />
@@ -38,39 +38,59 @@ const description =
       config={[
         {
           preload: false,
-          display: 'swap',
-          name: 'Avenir',
-          fallback: 'sans-serif',
+          display: "swap",
+          name: "Avenir",
+          fallback: "sans-serif",
           src: [
-          {
-              weight: '100',
-              style: 'normal',
-              path: join(process.cwd(), 'public', 'fonts', 'Avenir-Light.woff2')
+            {
+              weight: "100",
+              style: "normal",
+              path: join(
+                process.cwd(),
+                "public",
+                "fonts",
+                "Avenir-Light.woff2",
+              ),
             },
             {
-              weight: '400',
-              style: 'normal',
-              path: join(process.cwd(), 'public', 'fonts', 'Avenir-Medium.woff2')
+              weight: "400",
+              style: "normal",
+              path: join(
+                process.cwd(),
+                "public",
+                "fonts",
+                "Avenir-Medium.woff2",
+              ),
             },
             {
-              weight: '800',
-              style: 'normal',
-              path: join(process.cwd(), 'public', 'fonts', 'Avenir-Heavy.woff2')
+              weight: "800",
+              style: "normal",
+              path: join(
+                process.cwd(),
+                "public",
+                "fonts",
+                "Avenir-Heavy.woff2",
+              ),
             },
             {
-              weight: '900',
-              style: 'normal',
-              path: join(process.cwd(), 'public', 'fonts', 'Avenir-Black.woff2')
-            }
-          ]
-        }
+              weight: "900",
+              style: "normal",
+              path: join(
+                process.cwd(),
+                "public",
+                "fonts",
+                "Avenir-Black.woff2",
+              ),
+            },
+          ],
+        },
       ]}
     />
-   
+
     <!--Import Lenis smooth scroll script -->
     <script>
       import "~/assets/scripts/lenisSmoothScroll.js";
-    </script>    
+    </script>
 
     <!-- initialize theme -->
     <script is:inline>
@@ -96,10 +116,13 @@ const description =
         });
     </script>
     <!-- Umami Analytics script tag -->
-    <script defer src="https://umami.cobaltweb.tech/script.js" data-website-id={umamiId}></script>
+    <script
+      defer
+      src="https://umami.cobaltweb.tech/script.js"
+      data-website-id={umamiId}></script>
   </head>
   <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    class="bg-default text-default selection:bg-secondary h-full overflow-x-hidden text-base selection:text-white"
   >
     <Header />
     <Donation />

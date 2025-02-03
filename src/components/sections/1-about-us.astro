@@ -5,17 +5,18 @@ import ContentSection from "~/components/content-section.astro";
 import DonateButton from "~/components/donate-button.astro";
 
 // Import images
-import waterFountain from "~/assets/photos/Dublin-Corner-Lot-3.avif"
+import waterFountain from "~/assets/photos/Dublin-Corner-Lot-3.avif";
 ---
 
 <ContentSection title="About the Dublin Corner Lot" id="about-us">
   <Icon slot="above-icon" name="mdi:tree" class="size-32 text-green-400" />
   <Fragment slot="lead">
-    Your <span class="text-primary">community park</span> at the heart of Dublin, Texas.
+    Your <span class="text-primary">community park</span> at the heart of Dublin,
+    Texas.
   </Fragment>
   <DonateButton />
-  <div class="max-w-screen-xl grid xl:grid-cols-3 gap-8 items-center">
-    <div class="xl:col-span-2 w-full">
+  <div class="grid items-center gap-8 xl:grid-cols-3">
+    <div class="w-full xl:col-span-2">
       <Image
         class="w-full border-8 border-green-400"
         src={waterFountain}
@@ -24,12 +25,18 @@ import waterFountain from "~/assets/photos/Dublin-Corner-Lot-3.avif"
         width="640"
       />
     </div>
-    <div class="space-y-8">
-      <p class="max-w-4xl text-justify">
-        At the center of Dublin, the Irish Capital of Texas, stands the Dublin Corner Lot. We are a small community park well equipped to please the senses of anyone passing by or choosing to stay a bit.
+    <div class="space-y-8 text-justify text-lg/7">
+      <p>
+        At the center of Dublin, the Irish Capital of Texas, stands the Dublin
+        Corner Lot. We are a small community park well equipped to please the
+        senses of anyone passing by or choosing to stay a bit.
       </p>
-      <p class="max-w-4xl text-justify">
-        There’s a charming gazebo, wooden benches shaded by arbors of crossvines, a small pond complete with bubbling waterfall, lovely waterlilies, and a school of koi (fish). Shade trees with flowers and even bluebonnets in spring wildflower season! This park is our front porch to the community.
+      <p>
+        There’s a charming gazebo, wooden benches shaded by arbors of
+        crossvines, a small pond complete with bubbling waterfall, lovely
+        waterlilies, and a school of koi (fish). Shade trees with flowers and
+        even bluebonnets in spring wildflower season! This park is our front
+        porch to the community.
       </p>
     </div>
   </div>

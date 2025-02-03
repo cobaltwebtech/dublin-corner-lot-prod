@@ -16,10 +16,13 @@ import img6 from "~/assets/photos/Dublin-Corner-Lot-10.avif";
 
 <ContentSection title="Our Mission" id="our-mission">
   <Fragment slot="lead">
-    We are dedicated to continuing a <span class="text-green-500">green</span> and open space for any and all to enjoy. <br> This is <span class="text-primary">your</span> park!
+    We are dedicated to continuing a <span class="text-green-500">green</span> and
+    open space for any and all to enjoy. <br /> This is <span
+      class="text-primary">your</span
+    > park!
   </Fragment>
-  <div class="max-w-screen-xl grid xl:grid-cols-2 gap-8 items-center">
-    <div class="w-3/4 mx-auto">
+  <div class="grid items-center gap-8 xl:grid-cols-2">
+    <div class="mx-auto w-3/4">
       <Image
         class="w-full border-8 border-green-400"
         src={imgTall}
@@ -28,25 +31,39 @@ import img6 from "~/assets/photos/Dublin-Corner-Lot-10.avif";
         width="640"
       />
     </div>
-    <div class="space-y-8">
-      <p class="max-w-4xl text-justify">
-        Our park does not belong to the city or any business. It belongs to those who support our cause of a green space for all.  Dublin’s citizens, businesses, and friends have been committed to our mission since 1996 in helping to maintain this park. Support through memberships, donations, and memorials keeps it flourishing.
+    <div class="space-y-8 text-justify text-base/7">
+      <p>
+        Our park does not belong to the city or any business. It belongs to
+        those who support our cause of a green space for all. Dublin’s citizens,
+        businesses, and friends have been committed to our mission since 1996 in
+        helping to maintain this park. Support through memberships, donations,
+        and memorials keeps it flourishing.
       </p>
-      <h3 class="text-center font-extrabold text-gold-600 text-2xl">
+      <h3
+        class="dark:text-gold-400 text-center text-3xl font-black text-green-600"
+      >
         We Need Your Help!
       </h3>
-      <p class="max-w-4xl text-justify">
-        Like any non-profit organization our funding comes completely from charitable donations to keep our park maintained and open to all. If you have a love of natural green spaces, keeping your community clean, and a passion for parks then consider making a donation today. We are a 501 (c)(3) non-profit organziation and all charitable donations are completely tax deductible. 
+      <p>
+        Like any non-profit organization our funding comes completely from
+        charitable donations to keep our park maintained and open to all. If you
+        have a love of natural green spaces, keeping your community clean, and a
+        passion for parks then consider making a donation today. We are a 501
+        (c)(3) non-profit organziation and all charitable donations are
+        completely tax deductible.
       </p>
-      <p class="max-w-4xl text-justify">
-        Can't make a donation? That's okay, we can still use your help by getting involved. We have "clean up" days, decoration events, general maintenance needs, and other areas where we could use an extra pair of hands to help. Get involved today in helping maintain the Corner Lot! 
+      <p>
+        Can't make a donation? That's okay, we can still use your help by
+        getting involved. We have "clean up" days, decoration events, general
+        maintenance needs, and other areas where we could use an extra pair of
+        hands to help. Get involved today in helping maintain the Corner Lot!
       </p>
-      <div class="w-fit mx-auto">
+      <div class="mx-auto w-fit">
         <DonateButton />
       </div>
     </div>
   </div>
-  <div class="max-w-screen-xl grid xl:grid-cols-3 gap-8 items-center">
+  <div class="grid max-w-screen-xl items-center gap-8 xl:grid-cols-3">
     <div class="w-full">
       <Image
         class="w-full border-2 border-green-400"

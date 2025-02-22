@@ -36,9 +36,9 @@ const ogDescription = OG.description;
 const socialImageRes = await getImage({
   src: OG.image,
   width: 1200,
-  height: 600,
+  height: 630,
 });
-const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
+const socialImage = Astro.url.origin + socialImageRes.src;
 
 // Generate and optimize the favicon images
 const faviconSvg = await getImage({

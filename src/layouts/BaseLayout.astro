@@ -7,7 +7,13 @@ import BackToTopButton from "@/comp/BackToTopButton.astro";
 import "@/styles/global.css";
 
 // Setting expected props
-const { title = SITE.title, meta, structuredData, noIndex } = Astro.props;
+const {
+  title = SITE.title,
+  meta,
+  structuredData,
+  noIndex,
+  externalAsset,
+} = Astro.props;
 const umamiId = import.meta.env.UMAMI_WEBSITE_ID;
 
 // Interface to type-check the properties
@@ -16,6 +22,7 @@ interface Props {
   meta?: string;
   structuredData?: object;
   noIndex?: boolean;
+  externalAsset?: boolean;
 }
 ---
 
@@ -31,7 +38,11 @@ interface Props {
       import "@/assets/scripts/lenisSmoothScroll";
     </script>
     <!-- Preconnect third party resources -->
-    <link rel="preconnect" href="https://iframe.mediadelivery.net" />
+    {
+      externalAsset && (
+        <link rel="preconnect" href="https://iframe.mediadelivery.net" />
+      )
+    }
     <!-- Script to check for dark mode and set theme -->
     <script is:inline>
       const themeSaved = localStorage.getItem("theme");

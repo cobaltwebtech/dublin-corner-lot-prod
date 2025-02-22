@@ -1,4 +1,4 @@
-import ogImageSrc from "@img/ogimage.png";
+import ogImageSrc from "@/assets/images/ogimage.png";
 
 export const SITE = {
   title: "Dublin Corner Lot",

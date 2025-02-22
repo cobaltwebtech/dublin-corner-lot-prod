@@ -3,10 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@layout/*": ["src/layouts/*"],
-      "@comp/*": ["src/components/*"],
-      "@img/*": ["src/assets/images/*"]
+      "@/*": ["src/*"]
     },
     "strictNullChecks": true,
     "verbatimModuleSyntax": true,

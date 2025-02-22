@@ -4,15 +4,16 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@layout/*": ["src/layouts/*.astro"],
-      "@comp/*": ["src/components/*.astro"],
+      "@layout/*": ["src/layouts/*"],
+      "@comp/*": ["src/components/*"],
       "@img/*": ["src/assets/images/*"]
     },
+    "strictNullChecks": true,
     "verbatimModuleSyntax": true,
     "moduleResolution": "bundler",
     "allowJs": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  "include": ["**/*.ts", "**/*.astro"],
   "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
 }

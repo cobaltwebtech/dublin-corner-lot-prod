@@ -13,6 +13,6 @@
     "allowJs": true,
     "skipLibCheck": true
   },
-  "include": ["**/*.ts", "**/*.astro"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
 }

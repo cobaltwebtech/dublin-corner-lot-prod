@@ -6,7 +6,6 @@ import minify from "@playform/compress";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://dublincornerlot.org/",
   output: "static",

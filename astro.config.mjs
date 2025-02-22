@@ -3,16 +3,28 @@ import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import compressor from "astro-compressor";
 import minify from "@playform/compress";
+import sitemap from "@astrojs/sitemap";
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://dublincornerlot.org/",
-  prefetch: true,
+  output: "static",
+  prefetch: {
+    prefetchAll: true,
+  },
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   vite: {
     plugins: [tailwindcss()],
   },
   integrations: [
+    sitemap({
+      filter: (page) => {
+        const url = new URL(page);
+        if (url.pathname.includes("/thank-you-for-donating")) return false;
+        return true;
+      },
+    }),
     icon({
       include: {
         mdi: [
@@ -40,4 +52,7 @@ export default defineConfig({
       brotli: true,
     }),
   ],
+  adapter: vercel({
+    imageService: true,
+  }),
 });

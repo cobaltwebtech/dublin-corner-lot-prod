@@ -11,25 +11,27 @@ import { Icon } from "astro-icon/components";
 </button>
 
 <script>
-  const backToTopButton = document.getElementById("back-to-top");
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.getElementById("back-to-top");
 
-  function toggleBackToTopButton() {
-    if (window.scrollY > 200) {
-      backToTopButton.classList.remove("opacity-0", "invisible");
-      backToTopButton.classList.add("opacity-100", "visible");
-    } else {
-      backToTopButton.classList.add("opacity-0", "invisible");
-      backToTopButton.classList.remove("opacity-100", "visible");
+    function toggleBackToTopButton() {
+      if (window.scrollY > 200) {
+        backToTopButton?.classList.remove("opacity-0", "invisible");
+        backToTopButton?.classList.add("opacity-100", "visible");
+      } else {
+        backToTopButton?.classList.add("opacity-0", "invisible");
+        backToTopButton?.classList.remove("opacity-100", "visible");
+      }
     }
-  }
 
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
 
-  window.addEventListener("scroll", toggleBackToTopButton);
-  backToTopButton.addEventListener("click", scrollToTop);
+    window.addEventListener("scroll", toggleBackToTopButton);
+    backToTopButton?.addEventListener("click", scrollToTop);
+  });
 </script>

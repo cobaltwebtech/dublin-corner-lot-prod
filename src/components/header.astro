@@ -1,9 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
-import ThemeSwitcher from "~/components/theme-switcher.astro";
-import Logo from "~/components/logo.astro";
-import type { NavItem } from "~/types";
+import ThemeSwitcher from "@comp/ThemeSwitcher";
+import Logo from "@comp/Logo";
+import type { NavItem } from "@/types";
 
+// Define array of menu items
 const navItems: Array<NavItem> = [
   { title: "About Us", url: "/#about-us" },
   { title: "History", url: "/#history" },

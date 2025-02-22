@@ -1,10 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-import HomeButton from "~/components/home-button.astro";
+import HomeButton from "@comp/HomeButton";
 
 // Import images
-import waterFountain from "~/assets/photos/Dublin-Corner-Lot-3.avif";
+import waterFountain from "@img/Dublin-Corner-Lot-3.avif";
 ---
 
 <section
@@ -12,7 +12,9 @@ import waterFountain from "~/assets/photos/Dublin-Corner-Lot-3.avif";
 >
   <Icon name="donation-heart" class="size-36 text-green-400" />
   <div class="flex flex-col items-center gap-4">
-    <h2 class="gradient-text text-center text-6xl font-black">
+    <h2
+      class="gradient-text text-center text-4xl font-black sm:text-6xl sm:leading-24"
+    >
       Thank You for Donating!
     </h2>
   </div>

@@ -4,9 +4,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@layout/*": ["src/layouts/*"],
-      "@comp/*": ["src/components/*"],
-      "@img/*": ["src/assets/images/*"]
+      "@/layout/*": ["src/layouts/*"],
+      "@/comp/*": ["src/components/*"],
+      "@/img/*": ["src/assets/images/*"]
     },
     "strictNullChecks": true,
     "verbatimModuleSyntax": true,

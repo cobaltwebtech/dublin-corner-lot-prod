@@ -10,7 +10,6 @@
     },
     "strictNullChecks": true,
     "verbatimModuleSyntax": true,
-    "moduleResolution": "bundler",
     "allowJs": true,
     "skipLibCheck": true
   },

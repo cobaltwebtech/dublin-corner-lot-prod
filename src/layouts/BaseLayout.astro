@@ -1,0 +1,85 @@
+---
+import Meta from "@/layouts/Meta.astro";
+import { SITE } from "@/data/siteConfig";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import BackToTopButton from "@/components/BackToTopButton.astro";
+import "@/styles/global.css";
+
+// Setting expected props
+const {
+  title = SITE.title,
+  meta,
+  structuredData,
+  noIndex,
+  externalAsset,
+} = Astro.props;
+const umamiId = import.meta.env.UMAMI_WEBSITE_ID;
+
+// Interface to type-check the properties
+interface Props {
+  title?: string;
+  meta?: string;
+  structuredData?: object;
+  noIndex?: boolean;
+  externalAsset?: boolean;
+}
+---
+
+<html lang="en" class="scrollbar-hide lenis lenis-smooth" data-theme="dark">
+  <head>
+    <!-- Define the title of the page -->
+    <title>{title}</title>
+    <!-- Adding metadata to the HTML document -->
+    <Meta meta={meta} structuredData={structuredData} noIndex={noIndex} />
+
+    <!--Import Lenis smooth scroll script -->
+    <script>
+      import "@/assets/scripts/lenisSmoothScroll";
+    </script>
+    <!-- Preconnect third party resources -->
+    {
+      externalAsset && (
+        <link rel="preconnect" href="https://iframe.mediadelivery.net" />
+      )
+    }
+    <!-- Script to check for dark mode and set theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+    <!-- Umami Analytics script tag -->
+    <script
+      defer
+      src="https://umami.cobaltweb.tech/script.js"
+      data-website-id={umamiId}></script>
+  </head>
+  <body
+    class="bg-default text-default selection:bg-secondary h-full overflow-x-hidden text-base selection:text-white"
+  >
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <BackToTopButton />
+  </body>
+</html>

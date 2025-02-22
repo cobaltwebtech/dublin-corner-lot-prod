@@ -8,10 +8,6 @@
       "@comp/*": ["src/components/*"],
       "@img/*": ["src/assets/images/*"]
     },
-    "strictNullChecks": true,
-    "verbatimModuleSyntax": true,
-    "allowJs": true,
-    "skipLibCheck": true
   },
   "exclude": ["node_modules", "**/node_modules/*", ".vscode", "dist"]
 }

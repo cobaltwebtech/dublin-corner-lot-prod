@@ -1,7 +1,7 @@
 {
   "name": "dublin-corner-lot",
   "type": "module",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "private": true,
   "packageManager": "pnpm@10.15.1",
   "scripts": {
@@ -29,7 +29,7 @@
     "lenis": "^1.3.11",
     "micromodal": "^0.6.1",
     "tailwind-merge": "^3.3.1",
-    "tailwind-variants": "^3.1.0",
+    "tailwind-variants": "^3.1.1",
     "tailwindcss": "^4.1.13",
     "tiny-invariant": "^1.3.3",
     "tw-animate-css": "^1.3.8"

@@ -72,17 +72,17 @@ const donationCards = [
     <h1 class="text-center text-4xl font-bold">
       Donate to the Dublin Corner Lot
     </h1>
-    <p>
+    <p class="text-justify">
       Our park does not belong to the city or any business. It belongs to those
       who support our cause of a green space for all. Dublin’s citizens,
       businesses, and friends have been committed to our mission since 1996 in
       helping to maintain this park. Support through memberships, donations, and
       memorials keeps it flourishing.
     </p>
-    <h3 class="text-accent text-center text-3xl font-black">
+    <h3 class="gradient-text text-center text-3xl font-black">
       We Need Your Help!
     </h3>
-    <p>
+    <p class="text-justify">
       Like any non-profit organization our funding comes completely from
       charitable donations to keep our park maintained and open to all. If you
       have a love of natural green spaces, keeping your community clean, and a
@@ -90,7 +90,7 @@ const donationCards = [
       (c)(3) non-profit organziation and all charitable donations are completely
       tax deductible.
     </p>
-    <p>
+    <p class="text-justify">
       Can't make a donation? That's okay, we can still use your help by getting
       involved. We have "clean up" days, decoration events, general maintenance
       needs, and other areas where we could use an extra pair of hands to help.
@@ -98,7 +98,9 @@ const donationCards = [
     </p>
   </section>
   <section class="w-full">
-    <h3 class="text-primary text-2xl font-bold">Make a one-time donation</h3>
+    <h3 class="text-primary text-2xl leading-loose font-bold">
+      Make a one-time donation
+    </h3>
     <Card class="w-fit">
       <CardHeader>
         <CardTitle>Choose Amount</CardTitle>
@@ -121,7 +123,9 @@ const donationCards = [
     </Card>
   </section>
   <section>
-    <h3 class="text-primary text-2xl font-bold">Make a recurring donation</h3>
+    <h3 class="text-primary text-2xl leading-loose font-bold">
+      Make a recurring donation
+    </h3>
     <div class="mx-auto grid gap-4 sm:grid-cols-2 md:grid-cols-3">
       {
         donationCards.map((card) => (

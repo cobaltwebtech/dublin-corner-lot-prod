@@ -30,13 +30,8 @@ interface Props {
   <head>
     <!-- Define the title of the page -->
     <title>{title}</title>
-    <!-- Adding metadata to the HTML document -->
+    <!-- Meta tags, Open Graph, icons, and sitemap -->
     <Meta meta={meta} structuredData={structuredData} noIndex={noIndex} />
-
-    <!--Import Lenis smooth scroll script -->
-    <script>
-      import "@/assets/scripts/lenisSmoothScroll";
-    </script>
     <!-- Preconnect third party resources -->
     {
       externalAsset && (
@@ -76,7 +71,17 @@ interface Props {
           }
         });
     </script>
-    <!-- Umami Analytics script tag -->
+    <!-- Lenis smooth scroll script -->
+    <script>
+      import Lenis from "lenis";
+      const lenis = new Lenis();
+      function raf(time: number): void {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
+    <!-- Umami Analytics script -->
     <script
       defer
       src="https://umami.cobaltweb.tech/script.js"
@@ -88,7 +93,7 @@ interface Props {
     <Header />
     <slot name="hero" />
     <main
-      class="relative mx-auto flex w-full max-w-screen-xl flex-auto flex-col items-center justify-center space-y-8 p-8 lg:space-y-12"
+      class="relative mx-auto flex w-full max-w-screen-xl flex-auto flex-col items-center justify-center space-y-8 p-6 sm:p-8 lg:space-y-12"
     >
       <slot />
     </main>

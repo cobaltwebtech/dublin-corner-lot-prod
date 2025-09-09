@@ -24,21 +24,7 @@ export default defineConfig({
         return true;
       },
     }),
-    icon({
-      include: {
-        mdi: [
-          "facebook",
-          "instagram",
-          "close",
-          "white-balance-sunny",
-          "weather-night",
-          "tree",
-          "about",
-          "menu",
-          "arrow-up-bold",
-        ],
-      },
-    }),
+    icon(),
     minify({
       CSS: false,
       HTML: true,

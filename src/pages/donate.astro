@@ -1,0 +1,172 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import {
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/starwind/card";
+import { Button } from "@/components/starwind/button";
+import { Icon } from "astro-icon/components";
+import { SITE } from "@/data/siteConfig";
+
+const pageTitle: string = `Donate Now | ${SITE.title}`;
+
+// Donation card options
+const donationCards = [
+  {
+    title: "$5/month",
+    description:
+      "Make a recurring donation to the Corner Lot for $5 per month.",
+    buttonText: "Select $5/month",
+    href: "https://donate.stripe.com/9B614o0oE1L113m75L6Zy01",
+    ariaLabel: "Select $5 per Month",
+  },
+  {
+    title: "$10/month",
+    description:
+      "Make a recurring donation to the Corner Lot for $10 per month.",
+    buttonText: "Select $10/month",
+    href: "https://donate.stripe.com/cNi3cw5IYgFVeUcgGl6Zy02",
+    ariaLabel: "Select $10 per Month",
+  },
+  {
+    title: "$25/month",
+    description:
+      "Make a recurring donation to the Corner Lot for $25 per month.",
+    buttonText: "Select $25/month",
+    href: "https://donate.stripe.com/aFa28sefu2P57rK3Tz6Zy03",
+    ariaLabel: "Select $25 per Month",
+  },
+  {
+    title: "$50/year",
+    description:
+      "Make a recurring donation to the Corner Lot for $50 per year.",
+    buttonText: "Select $50/year",
+    href: "https://donate.stripe.com/7sY8wQ0oE61heUcfCh6Zy04",
+    ariaLabel: "Select $50 per Year",
+  },
+  {
+    title: "$100/year",
+    description:
+      "Make a recurring donation to the Corner Lot for $100 per year.",
+    buttonText: "Select $100/year",
+    href: "https://donate.stripe.com/00w7sMc7m89pfYg61H6Zy05",
+    ariaLabel: "Select $25 per Month",
+  },
+  {
+    title: "$250/year",
+    description:
+      "Make a recurring donation to the Corner Lot for $250 per year.",
+    buttonText: "Select $250/year",
+    href: "https://donate.stripe.com/00w3cwc7mdtJfYg1Lr6Zy06",
+    ariaLabel: "Select $250 per Year",
+  },
+];
+---
+
+<BaseLayout title={pageTitle}>
+  <section class="space-y-4">
+    <Icon name="donate" class="text-secondary mx-auto size-32" />
+    <h1 class="text-center text-4xl font-bold">
+      Donate to the Dublin Corner Lot
+    </h1>
+    <p>
+      Our park does not belong to the city or any business. It belongs to those
+      who support our cause of a green space for all. Dublin’s citizens,
+      businesses, and friends have been committed to our mission since 1996 in
+      helping to maintain this park. Support through memberships, donations, and
+      memorials keeps it flourishing.
+    </p>
+    <h3 class="text-accent text-center text-3xl font-black">
+      We Need Your Help!
+    </h3>
+    <p>
+      Like any non-profit organization our funding comes completely from
+      charitable donations to keep our park maintained and open to all. If you
+      have a love of natural green spaces, keeping your community clean, and a
+      passion for parks then consider making a donation today. We are a 501
+      (c)(3) non-profit organziation and all charitable donations are completely
+      tax deductible.
+    </p>
+    <p>
+      Can't make a donation? That's okay, we can still use your help by getting
+      involved. We have "clean up" days, decoration events, general maintenance
+      needs, and other areas where we could use an extra pair of hands to help.
+      Get involved today in helping maintain the Corner Lot!
+    </p>
+  </section>
+  <section class="w-full">
+    <h3 class="text-primary text-2xl font-bold">Make a one-time donation</h3>
+    <Card class="w-fit">
+      <CardHeader>
+        <CardTitle>Choose Amount</CardTitle>
+        <CardDescription
+          >Make a one-time donation to the Corner Lot. You may select any amount
+          to donate.</CardDescription
+        >
+      </CardHeader>
+      <CardFooter>
+        <Button
+          variant="primary"
+          href="https://donate.stripe.com/28odSQ40d4wK1TW9AA"
+          target="_blank"
+          rel="noopener"
+          aria-label="Make a one-time donation"
+        >
+          Make a One-Time Donation
+        </Button>
+      </CardFooter>
+    </Card>
+  </section>
+  <section>
+    <h3 class="text-primary text-2xl font-bold">Make a recurring donation</h3>
+    <div class="mx-auto grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      {
+        donationCards.map((card) => (
+          <Card>
+            <CardHeader>
+              <CardTitle>{card.title}</CardTitle>
+              <CardDescription>{card.description}</CardDescription>
+            </CardHeader>
+            <CardFooter>
+              <Button
+                variant="secondary"
+                href={card.href}
+                target="_blank"
+                rel="noopener"
+                aria-label={card.ariaLabel}
+              >
+                {card.buttonText}
+              </Button>
+            </CardFooter>
+          </Card>
+        ))
+      }
+    </div>
+  </section>
+  <section class="w-full space-y-4">
+    <h3 class="text-primary text-2xl font-bold">
+      Manage your recurring donation
+    </h3>
+    <p>
+      Log in and update your donation subscription account. You can download
+      receipts, manage payment methods, and cancel subscription below.
+    </p>
+    <p>
+      If you wish to change the donation amount on the recurring subscription,
+      you will first need to log into your account and cancel the current
+      subscription then resubscribe with the new amount.
+    </p>
+    <Button
+      href="https://billing.stripe.com/p/login/bIYeX10zAbPt5Fe288"
+      target="_blank"
+      rel="noopener"
+      aria-label="Manage your recurring donation"
+    >
+      <Icon name="account-payment" class="size-6" />
+      Manage Subscription
+    </Button>
+  </section>
+</BaseLayout>

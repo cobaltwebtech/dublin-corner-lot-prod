@@ -1,0 +1,19 @@
+{
+  "$schema": "https://starwind.dev/config-schema.json",
+  "tailwind": {
+    "css": "src/styles/global.css",
+    "baseColor": "stone",
+    "cssVariables": true
+  },
+  "componentDir": "src/components",
+  "components": [
+    {
+      "name": "card",
+      "version": "1.1.0"
+    },
+    {
+      "name": "button",
+      "version": "2.0.1"
+    }
+  ]
+}

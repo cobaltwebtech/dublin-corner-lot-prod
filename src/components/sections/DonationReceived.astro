@@ -10,7 +10,7 @@ import waterFountain from "@/assets/images/Dublin-Corner-Lot-3.avif";
 <section
   class="flex scroll-mt-24 flex-col items-center gap-4 space-y-8 px-8 py-48"
 >
-  <Icon name="donation-heart" class="size-36 text-green-400" />
+  <Icon name="donation-heart" class="text-foreground size-36" />
   <div class="flex flex-col items-center gap-4">
     <h2
       class="gradient-text text-center text-4xl font-black sm:text-6xl sm:leading-24"
@@ -27,11 +27,10 @@ import waterFountain from "@/assets/images/Dublin-Corner-Lot-3.avif";
     deductible expenses as we are a 501 (c) (3) non-profit organization.
     <br />Our EIN is: 75-2784640
   </p>
-  <HomeButton />
   <div class="grid max-w-screen-xl items-center gap-8 xl:grid-cols-2">
     <div class="w-full">
       <Image
-        class="w-full border-8 border-green-400"
+        class="border-border w-full border-8"
         src={waterFountain}
         alt="Dublin Corner Lot water fountain"
         format="avif"
@@ -43,9 +42,8 @@ import waterFountain from "@/assets/images/Dublin-Corner-Lot-3.avif";
         Your generous charitable contribution allows us to continue our mission
         of maintaining and creating a beautiful open green space for all to use.
       </p>
-      <p class="text-gold-600 text-justify text-lg font-extrabold">
-        Thank You!
-      </p>
+      <p class="text-accent text-justify text-lg font-extrabold">Thank You!</p>
+      <HomeButton class="text-center" />
     </div>
   </div>
 </section>

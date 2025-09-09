@@ -1,14 +1,14 @@
 ---
+import { Button } from "@/components/starwind/button";
 import { Icon } from "astro-icon/components";
 ---
 
-<button type="button" aria-label="Donate to Dublin Corner Lot">
-  <a
-    href="https://donate.stripe.com/28odSQ40d4wK1TW9AA"
-    class="flex items-center justify-center gap-3 border-2 border-current bg-green-500 px-6 py-4 font-extrabold uppercase"
-    target="_blank"
-  >
-    <Icon name="donate" class="size-8" />
-    <span>Donate Now</span>
-  </a>
-</button>
+<Button
+  aria-label="Donate to Dublin Corner Lot"
+  href="/donate"
+  size="lg"
+  class="text-xl font-bold uppercase"
+>
+  <Icon name="donate" class="size-8" />
+  <span>Donate Now</span>
+</Button>

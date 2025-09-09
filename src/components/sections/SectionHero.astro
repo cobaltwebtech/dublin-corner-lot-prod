@@ -2,13 +2,11 @@
 import VideoHero from "@/components/VideoHero.astro";
 ---
 
-<section class="mt-28 grid grid-cols-1 grid-rows-1 items-center gap-4 sm:mt-40">
-  <div class="animate-fade-in col-start-1 row-start-1">
+<section class="w-screen">
+  <div class="animate-fade-in relative">
     <VideoHero />
-  </div>
-  <div class="z-10 col-start-1 row-start-1">
     <h1
-      class="text-gold-400 mx-4 text-center text-xl font-black sm:mx-0 md:text-6xl"
+      class="text-gold-400 absolute top-1/2 z-10 mx-4 w-full -translate-y-1/2 text-center text-xl font-black sm:mx-0 md:text-6xl"
     >
       Welcome to Dublin's Front Porch
     </h1>

@@ -1,17 +1,15 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/forms";
 @import "@/styles/lenis.css";
 
-@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@variant dark (&:where(.dark, .dark *));
 
-@theme {
+@theme inline {
   /* Font Family */
   --default-font-family: "Avenir", system-ui, -apple-system, sans-serif;
-  /* Color Palette */
-  --color-current: currentColor;
-  --color-primary: var(--color-primary);
-  --color-secondary: var(--color-secondary);
 
+  /* Color Palette */
   --color-green-50: oklch(96.76% 0.0196 143.04);
   --color-green-100: oklch(93.64% 0.0378 142.84);
   --color-green-200: oklch(87.46% 0.0757 142.03);
@@ -44,6 +42,36 @@
   --color-blue-700: oklch(51.23% 0.087 228.22);
   --color-blue-800: oklch(38.75% 0.0629 226.03);
   --color-blue-900: oklch(32.07% 0.0505 227.17);
+
+  --color-current: currentColor;
+  --color-background: var(--background);
+  --color-default: var(--default);
+  --color-offset: var(--offset);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-outline: var(--outline);
+
   /* Animations */
   @keyframes fade-in {
     0% {
@@ -54,45 +82,112 @@
     }
   }
   --animate-fade-in: fade-in 4s cubic-bezier(0.32, 0, 0.67, 0);
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--starwind-accordion-content-height);
+    }
+  }
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+
+  @keyframes accordion-up {
+    from {
+      height: var(--starwind-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 }
 
-/* Light and Dark mode colors */
 @layer base {
-  [data-theme="light"] {
-    --color-primary: var(--color-gold-600);
-    --color-secondary: var(--color-fuchsia-500);
-    --color-text: var(--color-green-900);
-    --color-text-offset: var(--color-gray-600);
-    --color-background: var(--color-green-100);
-    --color-background-offset: var(--color-green-200);
-    --color-border: var(--color-green-300);
+  :root {
+    --background: var(--color-green-100);
+    --default: var(--color-stone-950);
+    --offset: var(--color-green-200);
+    --foreground: var(--color-green-700);
+    --card: var(--color-green-50);
+    --card-foreground: var(--color-stone-950);
+    --popover: var(--color-stone-50);
+    --popover-foreground: var(--color-stone-950);
+    --primary: var(--color-blue-600);
+    --primary-foreground: var(--color-stone-50);
+    --secondary: var(--color-fuchsia-700);
+    --secondary-foreground: var(--color-stone-50);
+    --muted: var(--color-stone-100);
+    --muted-foreground: var(--color-stone-600);
+    --accent: var(--color-gold-600);
+    --accent-foreground: var(--color-stone-900);
+    --info: var(--color-blue-300);
+    --info-foreground: var(--color-blue-950);
+    --success: var(--color-green-600);
+    --success-foreground: var(--color-green-950);
+    --warning: var(--color-amber-300);
+    --warning-foreground: var(--color-amber-950);
+    --error: var(--color-red-700);
+    --error-foreground: var(--color-stone-50);
+    --border: var(--color-green-400);
+    --input: var(--color-stone-200);
+    --outline: var(--color-blue-600);
   }
 
-  [data-theme="dark"] {
-    --color-primary: var(--color-gold-400);
-    --color-secondary: var(--color-fuchsia-700);
-    --color-text: var(--color-green-100);
-    --color-text-offset: var(--color-gray-400);
-    --color-background: var(--color-green-900);
-    --color-background-offset: var(--color-green-800);
-    --color-border: var(--color-green-600);
+  .dark {
+    --background: var(--color-green-900);
+    --default: var(--color-stone-100);
+    --offset: var(--color-green-800);
+    --foreground: var(--color-green-600);
+    --card: var(--color-green-800);
+    --card-foreground: var(--color-stone-50);
+    --popover: var(--color-stone-950);
+    --popover-foreground: var(--color-stone-50);
+    --primary: var(--color-blue-500);
+    --primary-foreground: var(--color-stone-50);
+    --secondary: var(--color-fuchsia-300);
+    --secondary-foreground: var(--color-stone-950);
+    --muted: var(--color-stone-900);
+    --muted-foreground: var(--color-stone-300);
+    --accent: var(--color-gold-500);
+    --accent-foreground: var(--color-stone-100);
+    --info: var(--color-blue-300);
+    --info-foreground: var(--color-blue-950);
+    --success: var(--color-green-400);
+    --success-foreground: var(--color-green-950);
+    --warning: var(--color-amber-300);
+    --warning-foreground: var(--color-amber-950);
+    --error: var(--color-red-800);
+    --error-foreground: var(--color-stone-50);
+    --border: var(--color-green-500);
+    --input: var(--color-stone-800);
+    --outline: var(--color-blue-600);
+  }
+
+  * {
+    @apply border-border;
+  }
+  *:focus-visible {
+    @apply outline-outline;
+  }
+  html {
+    @apply scheme-light dark:scheme-dark;
+  }
+  button {
+    @apply cursor-pointer;
   }
 }
-/* Custom Utilities */
-@utility text-default {
-  color: var(--color-text);
-}
-@utility text-offset {
-  color: var(--color-text-offset);
-}
-@utility bg-default {
-  background-color: var(--color-background);
-}
-@utility bg-offset {
-  background-color: var(--color-background-offset);
-}
-@utility border-default {
-  border-color: var(--color-border);
+
+@layer utilities {
+  /* transition-colors but without outline-color transition property */
+  .starwind-transition-colors {
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill,
+      stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--default-transition-timing-function);
+    transition-duration: var(--default-transition-duration);
+  }
 }
 
 /* Custom components */

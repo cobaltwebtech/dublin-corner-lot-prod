@@ -1,14 +1,22 @@
 ---
+import { Button } from "@/components/starwind/button";
 import { Icon } from "astro-icon/components";
+
+export interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
 ---
 
-<div>
-  <a
+<div class={className}>
+  <Button
     href="/"
     aria-label="Home Button"
-    class="flex items-center justify-center gap-3 border-2 border-current bg-green-500 px-6 py-4 font-extrabold uppercase"
+    class="font-extrabold uppercase"
+    size="lg"
   >
     <Icon name="home" class="size-10" />
     <span>Go to Home Page</span>
-  </a>
+  </Button>
 </div>

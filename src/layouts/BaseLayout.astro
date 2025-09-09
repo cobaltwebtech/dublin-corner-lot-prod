@@ -26,7 +26,7 @@ interface Props {
 }
 ---
 
-<html lang="en" class="scrollbar-hide lenis lenis-smooth" data-theme="dark">
+<html lang="en" class="scrollbar-hide lenis lenis-smooth dark">
   <head>
     <!-- Define the title of the page -->
     <title>{title}</title>
@@ -48,21 +48,31 @@ interface Props {
       const themeSaved = localStorage.getItem("theme");
 
       if (themeSaved) {
-        document.documentElement.dataset.theme = themeSaved;
+        if (themeSaved === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
       } else {
         const prefersDark = window.matchMedia(
           "(prefers-color-scheme: dark)",
         ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+        if (prefersDark) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
       }
 
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", (event) => {
           if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
+            if (event.matches) {
+              document.documentElement.classList.add("dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+            }
           }
         });
     </script>
@@ -73,10 +83,13 @@ interface Props {
       data-website-id={umamiId}></script>
   </head>
   <body
-    class="bg-default text-default selection:bg-secondary h-full overflow-x-hidden text-base selection:text-white"
+    class="bg-background text-default selection:bg-secondary flex min-h-svh flex-col text-base selection:text-white"
   >
     <Header />
-    <main>
+    <slot name="hero" />
+    <main
+      class="relative mx-auto flex w-full max-w-screen-xl flex-auto flex-col items-center justify-center space-y-8 p-8 lg:space-y-12"
+    >
       <slot />
     </main>
     <Footer />

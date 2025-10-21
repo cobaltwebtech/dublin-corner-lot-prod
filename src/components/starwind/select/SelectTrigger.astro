@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+import type { HTMLAttributes } from "astro/types";
+import { tv } from "tailwind-variants";
+
+type Props = Omit<HTMLAttributes<"button">, "role" | "type"> & {
+  /**
+   * The content to be rendered inside the select trigger
+   */
+
+  children: any;
+  /**
+   * Whether the select field is required in a form context
+   */
+  required?: boolean;
+};
+
+export const selectTrigger = tv({
+  base: [
+    "starwind-select-trigger",
+    "bg-input dark:bg-input text-default ring-offset-background flex h-11 items-center justify-between border border-border px-3 py-2 shadow-xs",
+    "focus-visible:border-outline focus-visible:ring-outline/50 transition-[color,box-shadow] outline-none focus-visible:ring-3 [&_svg]:text-accent",
+    "disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+  ],
+});
+
+const { class: className, required = false, ...rest } = Astro.props;
+---
+
+<button
+  class={selectTrigger({ class: className })}
+  type="button"
+  role="combobox"
+  aria-label="Select field"
+  aria-controls=""
+  aria-expanded="false"
+  aria-haspopup="listbox"
+  aria-autocomplete="none"
+  aria-required={required ? "true" : "false"}
+  data-state="closed"
+  data-slot="select-trigger"
+  {...rest}
+>
+  <slot />
+  <Icon name="arrow-down" class="size-5" />
+</button>

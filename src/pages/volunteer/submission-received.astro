@@ -1,0 +1,25 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE } from "@/data/siteConfig";
+import HomeButton from "@/components/HomeButton.astro";
+import { Icon } from "astro-icon/components";
+
+const pageTitle: string = `Submission Received | ${SITE.title}`;
+---
+
+<BaseLayout title={pageTitle} noIndex={true}>
+  <section class="flex flex-col items-center gap-4 space-y-8 px-8 py-4">
+    <Icon name="inbox" class="text-accent size-36" />
+    <h1
+      class="gradient-text text-center text-4xl font-black sm:text-6xl sm:leading-24"
+    >
+      Your Submission Has Been Received!
+    </h1>
+    <p class="max-w-4xl text-justify text-lg font-normal">
+      Thank you for reaching out to us! We have received your submission and
+      appreciate you taking the time to contact us. Our team will review your
+      information and get back to you as soon as possible.
+    </p>
+    <HomeButton />
+  </section>
+</BaseLayout>

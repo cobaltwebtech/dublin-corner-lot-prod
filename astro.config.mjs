@@ -20,7 +20,11 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         const url = new URL(page);
-        if (url.pathname.includes("/thank-you-for-donating")) return false;
+        if (
+          url.pathname.includes("/thank-you-for-donating") ||
+          url.pathname.includes("/submission-received")
+        )
+          return false;
         return true;
       },
     }),

@@ -1,0 +1,213 @@
+---
+export const prerender = false; // Server render this route due to form handling
+
+import { actions, isInputError } from "astro:actions";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE } from "@/data/siteConfig";
+import { Button } from "@/components/starwind/button";
+import { Input } from "@/components/starwind/input";
+import { Label } from "@/components/starwind/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/starwind/select";
+import { Textarea } from "@/components/starwind/textarea";
+import { Icon } from "astro-icon/components";
+
+const pageTitle: string = `Volunteer | ${SITE.title}`;
+const turnstileSiteKey = import.meta.env.TURNSTILE_PUBLIC_KEY;
+
+// Handle redirect on successful form submission
+const result = Astro.getActionResult(actions.sendContactForm);
+if (result && !result.error) {
+  return Astro.redirect("/volunteer/submission-received");
+}
+
+// Check for errors to display
+const inputErrors = isInputError(result?.error) ? result.error.fields : {};
+const generalError =
+  result?.error && !isInputError(result.error) ? result.error.message : null;
+---
+
+<BaseLayout title={pageTitle}>
+  <section class="mx-auto max-w-4xl space-y-4">
+    <Icon name="contact" class="text-secondary mx-auto size-32" />
+    <h1
+      class="gradient-text text-center text-4xl font-black sm:text-6xl sm:leading-24"
+    >
+      Volunteer for the Corner Lot
+    </h1>
+    <p class="text-justify">
+      We need your help! Do you want to volunteer for the Corner Lot? Do you
+      need to accrue volunteer hours for school or other organization? Are you a
+      local citizen with a desire to beautify and improve our community? Whether
+      it’s organizing, fundraising, skilled trades, clean up days, park
+      maintenance, or just simply getting the word out about our cause you can
+      make a difference.
+    </p>
+    <p class="text-justify">
+      Volunteer for the Corner Lot by filling out the form below. Not all fields
+      are required, but the more information you provide, the better we can
+      assist you.
+    </p>
+  </section>
+  {/* Contact Form */}
+  <section class="mx-auto max-w-3xl">
+    <form
+      id="contact-form"
+      action={actions.sendContactForm}
+      method="POST"
+      class="w-full space-y-3"
+    >
+      <p class="text-secondary font-semibold">Contact Details:</p>
+      <div class="flex gap-4">
+        <Input
+          id="firstname"
+          name="firstname"
+          placeholder="First Name"
+          required
+        />
+        <Input id="lastname" name="lastname" placeholder="Last Name" required />
+      </div>
+      <Input
+        id="email"
+        placeholder="Email Address"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+      />
+      <Input
+        id="phone"
+        placeholder="Phone Number"
+        name="phone"
+        type="tel"
+        autocomplete="tel"
+        required
+      />
+      <p class="text-secondary mt-2 font-semibold">Volunteer Information:</p>
+      <p class="m-0">Where can you volunteer?</p>
+      <Select id="volunteer-location" name="volunteer-location">
+        <SelectTrigger class="w-full">
+          <SelectValue placeholder="Select a location to volunteer" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="On Site">On Site</SelectItem>
+          <SelectItem value="Remote">Remote</SelectItem>
+          <SelectItem value="Both">Both</SelectItem>
+        </SelectContent>
+      </Select>
+      <p class="m-0">Are you needing volunteer hours?</p>
+      <Select id="volunteer-reason" name="volunteer-reason">
+        <SelectTrigger class="w-full">
+          <SelectValue placeholder="Select a volunteer reason" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="Personal">Personal (No Hours Needed)</SelectItem>
+          <SelectItem value="Volunteer for College"
+            >Volunteer for School (College)</SelectItem
+          >
+          <SelectItem value="Volunteer for High School"
+            >Volunteer For School (High School)</SelectItem
+          >
+          <SelectItem value="Volunteer for Other"
+            >Other Volunteer Hours</SelectItem
+          >
+        </SelectContent>
+      </Select>
+      <Label for="abilities"
+        >What are your strengths, skills, and abilities?</Label
+      >
+      <Textarea
+        id="abilities"
+        placeholder="Please enter your abilities that would help us match you to the right volunteer role"
+        name="abilities"
+        maxlength="500"
+      />
+      <Label for="availability">When are you availabile?</Label>
+      <Textarea
+        id="availability"
+        placeholder="Please enter your availability schedule for volunteering"
+        name="availability"
+        maxlength="500"
+      />
+      <p class="text-secondary mt-2 font-semibold">Questions or Comments:</p>
+      <Textarea
+        id="message"
+        placeholder="Please enter any additional information or questions you may have"
+        name="message"
+        maxlength="500"
+      />
+      <!-- Cloudflare Turnstile widget -->
+      <div
+        id="turnstile-widget"
+        class="cf-turnstile m-0"
+        data-sitekey={turnstileSiteKey}
+        data-size="flexible"
+      >
+      </div>
+      <p class="text-xs">
+        We're just checking that you're a real human filling out this form.
+        <br />Bad bots stay away!
+      </p>
+      {
+        generalError && (
+          <div class="rounded-full border-2 border-orange-400 bg-red-700 p-3 font-bold text-white">
+            <div class="flex justify-center gap-2">
+              <Icon name="close-octagon-outline" />
+              <span>{generalError}</span>
+            </div>
+          </div>
+        )
+      }
+      <div
+        id="error-message"
+        class="hidden rounded-full border-2 border-orange-400 bg-red-700 p-3 font-bold text-white"
+      >
+        <div class="flex justify-center gap-2">
+          <Icon name="close-octagon-outline" /><span id="error-text"></span>
+        </div>
+      </div>
+      <Button type="submit" id="submit-button" class="mt-4 w-fit">
+        <Icon name="send" class="size-5" id="send-icon" />
+        <Icon
+          name="spinner"
+          class="hidden size-5 animate-spin"
+          id="loader-icon"
+        />
+        <span id="button-text">Send Contact Request</span>
+      </Button>
+    </form>
+  </section>
+</BaseLayout>
+
+<script
+  is:inline
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer></script>
+
+<script>
+  // Show loading state when form is submitted
+  // The form will submit to the action endpoint
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const submitButton = document.getElementById(
+    "submit-button",
+  ) as HTMLButtonElement;
+  const sendIcon = document.getElementById("send-icon") as HTMLElement;
+  const loaderIcon = document.getElementById("loader-icon") as HTMLElement;
+  const buttonText = document.getElementById("button-text") as HTMLSpanElement;
+
+  form.addEventListener("submit", () => {
+    // Show loading state
+    submitButton.disabled = true;
+    sendIcon.classList.add("hidden");
+    loaderIcon.classList.remove("hidden");
+    if (buttonText) {
+      buttonText.textContent = "Sending Request... Please Wait";
+    }
+  });
+</script>

@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/starwind/button";
 import { Icon } from "astro-icon/components";
 import { SITE } from "@/data/siteConfig";
+import VolunteerButton from "@/components/VolunteerButton.astro";
 
 const pageTitle: string = `Donate Now | ${SITE.title}`;
 
@@ -69,8 +70,10 @@ const donationCards = [
 <BaseLayout title={pageTitle}>
   <section class="space-y-4">
     <Icon name="donate" class="text-secondary mx-auto size-32" />
-    <h1 class="text-center text-4xl font-bold">
-      Donate to the Dublin Corner Lot
+    <h1
+      class="gradient-text text-center text-4xl font-black sm:text-6xl sm:leading-24"
+    >
+      Donate to the Corner Lot
     </h1>
     <p class="text-justify">
       Our park does not belong to the city or any business. It belongs to those
@@ -79,7 +82,7 @@ const donationCards = [
       helping to maintain this park. Support through memberships, donations, and
       memorials keeps it flourishing.
     </p>
-    <h3 class="gradient-text text-center text-3xl font-black">
+    <h3 class="text-secondary text-center text-3xl font-black">
       We Need Your Help!
     </h3>
     <p class="text-justify">
@@ -94,8 +97,10 @@ const donationCards = [
       Can't make a donation? That's okay, we can still use your help by getting
       involved. We have "clean up" days, decoration events, general maintenance
       needs, and other areas where we could use an extra pair of hands to help.
-      Get involved today in helping maintain the Corner Lot!
+      Get involved today in helping maintain the Corner Lot! Fill out our
+      volunteer form to get started.
     </p>
+    <VolunteerButton />
   </section>
   <section class="w-full">
     <h3 class="text-primary text-2xl leading-loose font-bold">

@@ -3,14 +3,17 @@ import DonateButton from "@/components/DonateButton.astro";
 ---
 
 <footer class="border-border bg-offset border-t-2 px-4 py-16">
-  <div class="flex w-full items-center justify-around">
+  <div
+    class="flex w-full flex-col items-center justify-around gap-4 md:flex-row"
+  >
     <div class="text-sm">
-      <p class="font-extrabold">Dublin Corner Lot, Inc.</p>
-      <p class="font-light">
+      <p class="text-center font-extrabold">Dublin Corner Lot, Inc.</p>
+      <p class="text-center font-light">
         501 (c)(3) Non-Profit Corporation
         <br /> EIN: 75-2784640
       </p>
     </div>
+    <p><a href="/volunteer" class="font-bold">Volunteer for Us</a></p>
     <DonateButton />
   </div>
   <p class="mt-8 text-center text-sm">

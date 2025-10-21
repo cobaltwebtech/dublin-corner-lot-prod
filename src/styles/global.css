@@ -131,7 +131,7 @@
     --error: var(--color-red-700);
     --error-foreground: var(--color-stone-50);
     --border: var(--color-green-400);
-    --input: var(--color-stone-200);
+    --input: var(--color-stone-100);
     --outline: var(--color-blue-600);
   }
 
@@ -161,7 +161,7 @@
     --error: var(--color-red-800);
     --error-foreground: var(--color-stone-50);
     --border: var(--color-green-500);
-    --input: var(--color-stone-800);
+    --input: var(--color-stone-700);
     --outline: var(--color-blue-600);
   }
 

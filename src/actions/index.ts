@@ -1,6 +1,7 @@
 import { ActionError, defineAction } from "astro:actions";
 import { z } from "astro:schema";
 import { Resend } from "resend";
+import { volunteerEmailTemplate } from "@/lib/volunteer-email";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
@@ -62,38 +63,15 @@ export const server = {
         });
       }
 
-      // Prepare email content
-      const emailHtml = `
-        <h2>New Contact Form Submission</h2>
-        <h3>Contact Details:</h3>
-        <p><strong>Name:</strong> ${input.firstname} ${input.lastname}</p>
-        <p><strong>Email:</strong> ${input.email}</p>
-        <p><strong>Phone:</strong> ${input.phone}</p>
-        
-        <h3>Volunteer Information:</h3>
-        <p><strong>Volunteer Location:</strong> ${input["volunteer-location"] || "Not specified"}</p>
-        <p><strong>Volunteer Reason:</strong> ${input["volunteer-reason"] || "Not specified"}</p>
-        <p><strong>Skills/Abilities:</strong></p>
-        <p>${input.abilities || "Not provided"}</p>
-        <p><strong>Availability:</strong></p>
-        <p>${input.availability || "Not provided"}</p>
-        
-        ${
-          input.message
-            ? `
-          <h3>Additional Message:</h3>
-          <p>${input.message}</p>
-        `
-            : ""
-        }
-      `;
+      // Use the email template function to generate HTML
+      const emailHtml = volunteerEmailTemplate(input);
 
       // Send email via Resend
       const { data, error } = await resend.emails.send({
-        from: "Corner Lot Website <notifications@contact.cobaltweb.tech>",
+        from: "Dublin Corner Lot <notifications@contact.cobaltweb.tech>",
         to: "dublinflowerlady@yahoo.com",
         cc: "info@cobaltweb.tech",
-        subject: `New Contact Submission: ${input.firstname} ${input.lastname}`,
+        subject: `New Volunteer Submission: ${input.firstname} ${input.lastname}`,
         html: emailHtml,
         replyTo: input.email,
       });

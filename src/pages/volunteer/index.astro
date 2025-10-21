@@ -3,7 +3,7 @@ export const prerender = false; // Server render this route due to form handling
 
 import { actions, isInputError } from "astro:actions";
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { SITE } from "@/data/siteConfig";
+import { SITE } from "@/lib/siteConfig";
 import { Button } from "@/components/starwind/button";
 import { Input } from "@/components/starwind/input";
 import { Label } from "@/components/starwind/label";
@@ -27,7 +27,6 @@ if (result && !result.error) {
 }
 
 // Check for errors to display
-const inputErrors = isInputError(result?.error) ? result.error.fields : {};
 const generalError =
   result?.error && !isInputError(result.error) ? result.error.message : null;
 ---

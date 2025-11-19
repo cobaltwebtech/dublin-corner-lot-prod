@@ -1,17 +1,17 @@
 type VolunteerInput = {
-  firstname: string;
-  lastname: string;
-  email: string;
-  phone: string;
-  "volunteer-location"?: string;
-  "volunteer-reason"?: string;
-  abilities?: string;
-  availability?: string;
-  message?: string;
+	firstname: string;
+	lastname: string;
+	email: string;
+	phone: string;
+	"volunteer-location"?: string;
+	"volunteer-reason"?: string;
+	abilities?: string;
+	availability?: string;
+	message?: string;
 };
 
 export function volunteerEmailTemplate(input: VolunteerInput): string {
-  return `
+	return `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" lang="en">
   <head>

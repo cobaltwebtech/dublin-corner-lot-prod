@@ -1,9 +1,10 @@
 ---
+
+import BackToTopButton from "@/components/BackToTopButton.astro";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
 import Meta from "@/layouts/Meta.astro";
 import { SITE } from "@/lib/siteConfig";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
-import BackToTopButton from "@/components/BackToTopButton.astro";
 import "@/styles/global.css";
 
 // Setting expected props
@@ -74,6 +75,7 @@ interface Props {
     <!-- Lenis smooth scroll script -->
     <script>
       import Lenis from "lenis";
+
       const lenis = new Lenis();
       function raf(time: number): void {
         lenis.raf(time);

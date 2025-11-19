@@ -1,6 +1,7 @@
 ---
-import { Icon } from "astro-icon/components";
+
 import type { HTMLAttributes } from "astro/types";
+import { Icon } from "astro-icon/components";
 import { tv } from "tailwind-variants";
 
 type Props = HTMLAttributes<"div"> & {
@@ -16,15 +17,15 @@ type Props = HTMLAttributes<"div"> & {
 
 export const selectItem = tv({
   base: [
-    "relative flex w-full cursor-default items-center py-1.5 pr-2 pl-8 outline-none select-none",
-    "focus:bg-background focus:text-accent-foreground",
+    "relative flex w-full cursor-default items-center py-1.5 pr-8 pl-2 outline-none select-none",
+    "data-[active]:bg-background data-[active]:text-accent-foreground",
     "data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
     "not-aria-selected:[&_svg]:hidden aria-selected:[&_svg]:flex",
   ],
 });
 
 export const selectItemIcon = tv({
-  base: "absolute left-2 size-3.5 items-center justify-center",
+  base: "absolute right-2 flex size-4 items-center justify-center",
 });
 
 const { class: className, value, disabled, ...rest } = Astro.props;
@@ -40,10 +41,12 @@ const { class: className, value, disabled, ...rest } = Astro.props;
   tabindex="0"
   {...rest}
 >
-  <span class={selectItemIcon()}>
-    <Icon name="checkmark" class="text-success size-4" />
-  </span>
   <span>
     <slot />
+  </span>
+  <span class={selectItemIcon()}>
+    <slot name="icon">
+      <Icon name="checkmark" class="text-success size-4" />
+    </slot>
   </span>
 </div>

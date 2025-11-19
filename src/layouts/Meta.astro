@@ -1,10 +1,10 @@
 ---
 import { getImage } from "astro:assets";
-import { OG, SEO, SITE } from "@/lib/siteConfig";
+import { join } from "node:path";
+import { AstroFont } from "astro-font";
 import faviconSvgSrc from "@/assets/images/favicon/favicon.svg";
 import faviconSrc from "@/assets/images/favicon/icon-maskable.png";
-import { join } from "path";
-import { AstroFont } from "astro-font";
+import { OG, SEO, SITE } from "@/lib/siteConfig";
 
 // Default properties for the Meta component. These values are used if props are not provided.
 // 'meta' sets a default description meta tag to describe the page content.

@@ -11,13 +11,9 @@ type Props = HTMLAttributes<"span"> & {
 
 export const selectValue = tv({ base: "pointer-events-none" });
 
-const { placeholder = "Select", class: className, ...rest } = Astro.props;
+const { placeholder = "select", class: className, ...rest } = Astro.props;
 ---
 
-<span
-  class={selectValue({ class: className })}
-  data-slot="select-value"
-  {...rest}
->
+<span class={selectValue({ class: className })} data-slot="select-value" {...rest}>
   {placeholder}
 </span>

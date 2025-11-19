@@ -1,9 +1,9 @@
 ---
+
 export const prerender = false; // Server render this route due to form handling
 
 import { actions, isInputError } from "astro:actions";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import { SITE } from "@/lib/siteConfig";
+import { Icon } from "astro-icon/components";
 import { Button } from "@/components/starwind/button";
 import { Input } from "@/components/starwind/input";
 import { Label } from "@/components/starwind/label";
@@ -15,7 +15,8 @@ import {
   SelectValue,
 } from "@/components/starwind/select";
 import { Textarea } from "@/components/starwind/textarea";
-import { Icon } from "astro-icon/components";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE } from "@/lib/siteConfig";
 
 const pageTitle: string = `Volunteer | ${SITE.title}`;
 const turnstileSiteKey = import.meta.env.TURNSTILE_PUBLIC_KEY;
@@ -53,7 +54,7 @@ const generalError =
       assist you.
     </p>
   </section>
-  {/* Contact Form */}
+  <!-- Contact form -->
   <section class="mx-auto max-w-3xl">
     <form
       id="contact-form"
@@ -126,7 +127,7 @@ const generalError =
         name="abilities"
         maxlength="500"
       />
-      <Label for="availability">When are you availabile?</Label>
+      <Label for="availability">When are you available?</Label>
       <Textarea
         id="availability"
         placeholder="Please enter your availability schedule for volunteering"

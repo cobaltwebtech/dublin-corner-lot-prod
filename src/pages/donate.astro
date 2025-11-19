@@ -1,5 +1,7 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import { Icon } from "astro-icon/components";
+import { Button } from "@/components/starwind/button";
 import {
   Card,
   CardDescription,
@@ -7,10 +9,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/starwind/card";
-import { Button } from "@/components/starwind/button";
-import { Icon } from "astro-icon/components";
-import { SITE } from "@/lib/siteConfig";
 import VolunteerButton from "@/components/VolunteerButton.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SITE } from "@/lib/siteConfig";
 
 const pageTitle: string = `Donate Now | ${SITE.title}`;
 

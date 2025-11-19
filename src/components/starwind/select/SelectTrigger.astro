@@ -1,34 +1,46 @@
 ---
-import { Icon } from "astro-icon/components";
+
 import type { HTMLAttributes } from "astro/types";
-import { tv } from "tailwind-variants";
+import { Icon } from "astro-icon/components";
+import { tv, type VariantProps } from "tailwind-variants";
 
-type Props = Omit<HTMLAttributes<"button">, "role" | "type"> & {
-  /**
-   * The content to be rendered inside the select trigger
-   */
-
-  children: any;
-  /**
-   * Whether the select field is required in a form context
-   */
-  required?: boolean;
-};
+type Props = Omit<HTMLAttributes<"button">, "role" | "type"> &
+  VariantProps<typeof selectTrigger> & {
+    /**
+     * The content to be rendered inside the select trigger
+     */
+    // biome-ignore lint: allow-suspicious-any
+    children: any;
+    /**
+     * Whether the select field is required in a form context
+     */
+    required?: boolean;
+  };
 
 export const selectTrigger = tv({
   base: [
     "starwind-select-trigger",
-    "bg-input dark:bg-input text-default ring-offset-background flex h-11 items-center justify-between border border-border px-3 py-2 shadow-xs",
+    "bg-input dark:bg-input border-input text-default ring-offset-background flex items-center justify-between gap-2 border border-border bg-transparent shadow-xs",
     "focus-visible:border-outline focus-visible:ring-outline/50 transition-[color,box-shadow] outline-none focus-visible:ring-3 [&_svg]:text-accent",
     "disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
   ],
+  variants: {
+    size: {
+      sm: "h-9 px-2 text-sm",
+      md: "h-11 px-3 text-base",
+      lg: "h-12 px-4 text-lg",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+  },
 });
 
-const { class: className, required = false, ...rest } = Astro.props;
+const { class: className, size, required = false, ...rest } = Astro.props;
 ---
 
 <button
-  class={selectTrigger({ class: className })}
+  class={selectTrigger({ size, class: className })}
   type="button"
   role="combobox"
   aria-label="Select field"
@@ -42,5 +54,7 @@ const { class: className, required = false, ...rest } = Astro.props;
   {...rest}
 >
   <slot />
-  <Icon name="arrow-down" class="size-5" />
+  <slot name="icon">
+    <Icon name="arrow-down" class="size-5" />
+  </slot>
 </button>

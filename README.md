@@ -30,20 +30,20 @@ Check us out [https://www.cobaltweb.tech/](https://www.cobaltweb.tech/?utm_sourc
 
 Below is an outline of the `src/` directory to help you navigate the project. (This is not a complete listing of every file and subfile, but should give you a clear map of the source layout.)
 
-```
+```text
 src/
-	actions/ # Astro Actions directory
-	assets/ # Media assets such as images
-		images/
-	components/ # Astro components
-		sections/
-		starwind/
-	icons/ # SVG icons
-	layouts/ # Base layout and meta for SEO
-	lib/ # Site functions
-	pages/ # Astro routes
-		volunteer/
-	styles/ # CSS directory
+├── actions/ # Astro Actions directory
+├── assets/ # Media assets such as images
+│   └── images/
+├── components/ # Astro components
+│   └── sections/
+│   └── starwind/
+├── icons/ # SVG icons
+├── layouts/ # Base layout and meta for SEO
+├── lib/ # Site functions
+├── pages/ # Astro routes
+│   └── volunteer/
+└── styles/ # CSS directory
 ```
 
 ## Performance Enhancements

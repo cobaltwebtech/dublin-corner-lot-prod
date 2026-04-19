@@ -1,5 +1,5 @@
 import { ActionError, defineAction } from "astro:actions";
-import { z } from "astro/zod";
+import { z } from "astro:schema";
 import { Resend } from "resend";
 import { volunteerEmailTemplate } from "@/lib/volunteer-email";
 
@@ -9,7 +9,7 @@ const resend = new Resend(import.meta.env.RESEND_API_KEY);
 const contactFormSchema = z.object({
 	firstname: z.string().min(1, "First name is required"),
 	lastname: z.string().min(1, "Last name is required"),
-	email: z.email("Invalid email address"),
+	email: z.string().email("Invalid email address"),
 	phone: z.string().min(1, "Phone number is required"),
 	"volunteer-location": z.string().optional(),
 	"volunteer-reason": z.string().optional(),
@@ -69,7 +69,7 @@ export const server = {
 			// Send email via Resend
 			const { data, error } = await resend.emails.send({
 				from: "Dublin Corner Lot <notifications@contact.cobaltweb.tech>",
-				to: "cgarza@cobaltweb.tech",
+				to: "dublinflowerlady@yahoo.com",
 				cc: "info@cobaltweb.tech",
 				subject: `New Volunteer Submission: ${input.firstname} ${input.lastname}`,
 				html: emailHtml,

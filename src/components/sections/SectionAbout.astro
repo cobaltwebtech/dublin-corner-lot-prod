@@ -1,15 +1,17 @@
 ---
 
+
+
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 // Import images
 import waterFountain from "@/assets/images/Dublin-Corner-Lot-3.avif";
 import ContentSection from "@/components/ContentSection.astro";
 import DonateButton from "@/components/DonateButton.astro";
+import TreeIcon from "@/icons/tree.svg";
 ---
 
 <ContentSection title="About the Dublin Corner Lot" id="about-us">
-  <Icon slot="above-icon" name="tree" class="text-foreground size-32" />
+  <TreeIcon slot="above-icon" class="text-foreground size-32" />
   <Fragment slot="lead">
     Your <span class="text-primary">community park</span> at the heart of Dublin,
     Texas.

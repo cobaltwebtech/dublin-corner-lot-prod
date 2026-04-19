@@ -1,16 +1,18 @@
 ---
 
+
+
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import plaque from "@/assets/images/Dublin-Corner-Lot-1.avif";
 // Import images
 import archive from "@/assets/images/Dublin-Corner-Lot-archive.avif";
 import ContentSection from "@/components/ContentSection.astro";
 import DonateButton from "@/components/DonateButton.astro";
+import AboutIcon from "@/icons/about.svg";
 ---
 
 <ContentSection title="History of the Corner Lot" id="history">
-  <Icon slot="above-icon" name="about" class="text-foreground size-32" />
+  <AboutIcon slot="above-icon" class="text-foreground size-32" />
   <Fragment slot="lead">
     We call it the Corner Lot, but its official name is
     <br /><span class="text-primary">Pretty Peggy Pepper Park</span>.

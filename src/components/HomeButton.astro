@@ -1,7 +1,9 @@
 ---
 
-import { Icon } from "astro-icon/components";
+
+
 import { Button } from "@/components/starwind/button";
+import HomeIcon from "@/icons/home.svg";
 
 export interface Props {
   class?: string;
@@ -17,7 +19,7 @@ const { class: className } = Astro.props;
     class="font-extrabold uppercase"
     size="lg"
   >
-    <Icon name="home" class="size-10" />
+    <HomeIcon class="size-10" />
     <span>Go to Home Page</span>
   </Button>
 </div>

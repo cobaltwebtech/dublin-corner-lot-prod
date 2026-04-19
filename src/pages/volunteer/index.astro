@@ -1,9 +1,10 @@
 ---
 
+
+
 export const prerender = false; // Server render this route due to form handling
 
 import { actions, isInputError } from "astro:actions";
-import { Icon } from "astro-icon/components";
 import { Button } from "@/components/starwind/button";
 import { Input } from "@/components/starwind/input";
 import { Label } from "@/components/starwind/label";
@@ -15,6 +16,10 @@ import {
   SelectValue,
 } from "@/components/starwind/select";
 import { Textarea } from "@/components/starwind/textarea";
+import CloseOctagon from "@/icons/close-octagon-outline.svg";
+import ContactIcon from "@/icons/contact.svg";
+import SendIcon from "@/icons/send.svg";
+import SpinnerIcon from "@/icons/spinner.svg";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { SITE } from "@/lib/siteConfig";
 
@@ -34,7 +39,7 @@ const generalError =
 
 <BaseLayout title={pageTitle}>
   <section class="mx-auto max-w-4xl space-y-4">
-    <Icon name="contact" class="text-secondary mx-auto size-32" />
+    <ContactIcon class="text-secondary mx-auto size-32" />
     <h1
       class="gradient-text text-center text-4xl font-black sm:text-6xl sm:leading-24"
     >
@@ -157,7 +162,7 @@ const generalError =
         generalError && (
           <div class="rounded-full border-2 border-orange-400 bg-red-700 p-3 font-bold text-white">
             <div class="flex justify-center gap-2">
-              <Icon name="close-octagon-outline" />
+              <CloseOctagon />
               <span>{generalError}</span>
             </div>
           </div>
@@ -168,13 +173,12 @@ const generalError =
         class="hidden rounded-full border-2 border-orange-400 bg-red-700 p-3 font-bold text-white"
       >
         <div class="flex justify-center gap-2">
-          <Icon name="close-octagon-outline" /><span id="error-text"></span>
+          <CloseOctagon /><span id="error-text"></span>
         </div>
       </div>
       <Button type="submit" id="submit-button" class="mt-4 w-fit">
-        <Icon name="send" class="size-5" id="send-icon" />
-        <Icon
-          name="spinner"
+        <SendIcon class="size-5" id="send-icon" />
+        <SpinnerIcon
           class="hidden size-5 animate-spin"
           id="loader-icon"
         />

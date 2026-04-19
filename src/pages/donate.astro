@@ -1,6 +1,7 @@
 ---
 
-import { Icon } from "astro-icon/components";
+
+
 import { Button } from "@/components/starwind/button";
 import {
   Card,
@@ -10,6 +11,8 @@ import {
   CardTitle,
 } from "@/components/starwind/card";
 import VolunteerButton from "@/components/VolunteerButton.astro";
+import AccountPayment from "@/icons/account-payment.svg";
+import DonateIcon from "@/icons/donate.svg";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { SITE } from "@/lib/siteConfig";
 
@@ -70,7 +73,7 @@ const donationCards = [
 
 <BaseLayout title={pageTitle}>
   <section class="space-y-4">
-    <Icon name="donate" class="text-secondary mx-auto size-32" />
+    <DonateIcon class="text-secondary mx-auto size-32" />
     <h1
       class="gradient-text text-center text-4xl font-black sm:text-6xl sm:leading-24"
     >
@@ -175,7 +178,7 @@ const donationCards = [
       rel="noopener"
       aria-label="Manage your recurring donation"
     >
-      <Icon name="account-payment" class="size-6" />
+      <AccountPayment class="size-6" />
       Manage Subscription
     </Button>
   </section>

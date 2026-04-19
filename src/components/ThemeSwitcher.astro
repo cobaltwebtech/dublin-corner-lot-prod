@@ -1,14 +1,16 @@
 ---
-import { Icon } from "astro-icon/components";
+
+import MoonIcon from "@/icons/weather-night.svg";
+import SunIcon from "@/icons/white-balance-sunny.svg";
 ---
 
 <button id="theme-switcher" type="button" class="ml-0 origin-[right_center]">
   <div id="icon-theme-light">
-    <Icon name="white-balance-sunny" class="size-6" />
+    <SunIcon class="size-6" />
     <span class="sr-only">Use light theme</span>
   </div>
   <div id="icon-theme-dark" class="hidden">
-    <Icon name="weather-night" class="size-6" />
+    <MoonIcon class="size-6" />
     <span class="sr-only">Use dark theme</span>
   </div>
 </button>

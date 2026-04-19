@@ -1,7 +1,9 @@
 ---
 
-import { Icon } from "astro-icon/components";
+
+
 import HomeButton from "@/components/HomeButton.astro";
+import CloseOctagon from "@/icons/close-octagon-outline.svg";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { SITE } from "@/lib/siteConfig";
 
@@ -10,7 +12,7 @@ const pageTitle: string = `Page Not Found | ${SITE.title}`;
 
 <BaseLayout title={pageTitle} noIndex={true}>
   <section class="space-y-8 text-center">
-    <Icon name="close-octagon-outline" class="text-error mx-auto size-36" />
+    <CloseOctagon class="text-error mx-auto size-36" />
     <h1 class="text-5xl font-bold">Error 404 - Page Not Found</h1>
     <p>Sorry, the page you are looking for does not exist.</p>
     <HomeButton />

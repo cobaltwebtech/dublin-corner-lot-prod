@@ -1,14 +1,16 @@
 ---
 
+
+
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 // Import images
 import waterFountain from "@/assets/images/Dublin-Corner-Lot-3.avif";
 import HomeButton from "@/components/HomeButton.astro";
+import DonationHeart from "@/icons/donation-heart.svg";
 ---
 
 <section class="flex flex-col items-center gap-4 space-y-8 px-8 py-4">
-  <Icon name="donation-heart" class="text-foreground size-36" />
+  <DonationHeart class="text-foreground size-36" />
   <div class="flex flex-col items-center gap-4">
     <h2
       class="gradient-text text-center text-4xl font-black sm:text-6xl sm:leading-24"

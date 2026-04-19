@@ -1,9 +1,13 @@
 ---
 
-import { Icon } from "astro-icon/components";
+
+
 import Logo from "@/components/Logo.astro";
 import { Button } from "@/components/starwind/button";
 import ThemeSwitcher from "@/components/ThemeSwitcher.astro";
+import CloseIcon from "@/icons/close.svg";
+import DonateIcon from "@/icons/donate.svg";
+import MenuIcon from "@/icons/menu.svg";
 import type { NavItem } from "@/lib/types";
 
 // Define array of menu items
@@ -53,7 +57,7 @@ const navItems: Array<NavItem> = [
           aria-label="Navigation"
           size="sm"
         >
-          <Icon name="menu" class="size-8" />
+          <MenuIcon class="size-8" />
         </Button>
         <div class="hidden lg:block">
           <Button
@@ -61,7 +65,7 @@ const navItems: Array<NavItem> = [
             aria-label="Donate to Dublin Corner Lot"
             class="font-extrabold uppercase"
           >
-            <Icon name="donate" class="size-8" />
+            <DonateIcon class="size-8" />
             <span>Donate Now</span>
           </Button>
         </div>
@@ -78,7 +82,7 @@ const navItems: Array<NavItem> = [
                 aria-label="Close navigation"
                 size="sm"
               >
-                <Icon name="close" class="size-8" />
+                <CloseIcon class="size-8" />
               </Button>
             </header>
             <div class="flex justify-center">
@@ -87,7 +91,7 @@ const navItems: Array<NavItem> = [
                 aria-label="Donate to Dublin Corner Lot"
                 class="font-extrabold uppercase"
               >
-                <Icon name="donate" class="size-8" />
+                <DonateIcon class="size-8" />
                 <span>Donate Now</span>
               </Button>
             </div>

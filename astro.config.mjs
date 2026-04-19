@@ -1,21 +1,54 @@
+import netlify from "@astrojs/netlify";
 import sitemap from "@astrojs/sitemap";
-import vercel from "@astrojs/vercel";
 import minify from "@playform/compress";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import compressor from "astro-compressor";
-import icon from "astro-icon";
 
 export default defineConfig({
 	site: "https://dublincornerlot.org/",
 	output: "static",
+
 	prefetch: {
 		prefetchAll: true,
 	},
-	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+
+	fonts: [
+		{
+			provider: fontProviders.local(),
+			name: "Avenir",
+			cssVariable: "--default-font-family",
+			options: {
+				variants: [
+					{
+						weight: "200",
+						style: "normal",
+						src: ["./public/fonts/Avenir-Light.woff2"],
+					},
+					{
+						weight: "400",
+						style: "normal",
+						src: ["./public/fonts/Avenir-Medium.woff2"],
+					},
+					{
+						weight: "800",
+						style: "normal",
+						src: ["./public/fonts/Avenir-Heavy.woff2"],
+					},
+					{
+						weight: "900",
+						style: "normal",
+						src: ["./public/fonts/Avenir-Black.woff2"],
+					},
+				],
+			},
+		},
+	],
+
 	vite: {
 		plugins: [tailwindcss()],
 	},
+
 	integrations: [
 		sitemap({
 			filter: (page) => {
@@ -28,7 +61,6 @@ export default defineConfig({
 				return true;
 			},
 		}),
-		icon(),
 		minify({
 			CSS: false,
 			HTML: true,
@@ -41,7 +73,6 @@ export default defineConfig({
 			brotli: true,
 		}),
 	],
-	adapter: vercel({
-		imageService: true,
-	}),
+
+	adapter: netlify(),
 });

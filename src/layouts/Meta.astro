@@ -1,10 +1,11 @@
 ---
 import { getImage } from "astro:assets";
-import { join } from "node:path";
-import { AstroFont } from "astro-font";
-import faviconSvgSrc from "@/assets/images/favicon/favicon.svg";
-import faviconSrc from "@/assets/images/favicon/icon-maskable.png";
 import { OG, SEO, SITE } from "@/lib/siteConfig";
+
+// Icons
+const faviconSvg = "/icons/favicon.svg";
+const faviconIco = "/favicon.ico";
+const appleTouchIcon = "/icons/favicon-maskable-180.png";
 
 // Default properties for the Meta component. These values are used if props are not provided.
 // 'meta' sets a default description meta tag to describe the page content.
@@ -39,19 +40,6 @@ const socialImageRes = await getImage({
   height: 630,
 });
 const socialImage = Astro.url.origin + socialImageRes.src;
-
-// Generate and optimize the favicon images
-const faviconSvg = await getImage({
-  src: faviconSvgSrc,
-  format: "svg",
-});
-
-const appleTouchIcon = await getImage({
-  src: faviconSrc,
-  width: 180,
-  height: 180,
-  format: "png",
-});
 ---
 
 <!-- Inject structured data into the page if provided. This data is formatted as JSON-LD, a method recommended by Google for structured data pass:
@@ -103,44 +91,10 @@ const appleTouchIcon = await getImage({
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Links for favicons -->
-<link href="/favicon.ico" rel="icon" sizes="any" type="image/x-icon" />
-<link href={faviconSvg.src} rel="icon" type="image/svg+xml" sizes="any" />
+<link href={faviconIco} rel="icon" sizes="any" type="image/x-icon" />
+<link href={faviconSvg} rel="icon" type="image/svg+xml" sizes="any" />
 <meta name="mobile-web-app-capable" content="yes" />
-<link href={appleTouchIcon.src} rel="apple-touch-icon" />
-<link href={appleTouchIcon.src} rel="shortcut icon" />
+<link href={appleTouchIcon} rel="apple-touch-icon" sizes="180x180" />
+<link href={appleTouchIcon} rel="shortcut icon" />
 <!-- Set theme color -->
 <meta name="theme-color" content="#214a1c" />
-
-<!--Load and define fonts -->
-<AstroFont
-  config={[
-    {
-      preload: true,
-      display: "swap",
-      name: "Avenir",
-      fallback: "sans-serif",
-      src: [
-        {
-          weight: "100",
-          style: "normal",
-          path: join(process.cwd(), "public", "fonts", "Avenir-Light.woff2"),
-        },
-        {
-          weight: "400",
-          style: "normal",
-          path: join(process.cwd(), "public", "fonts", "Avenir-Medium.woff2"),
-        },
-        {
-          weight: "800",
-          style: "normal",
-          path: join(process.cwd(), "public", "fonts", "Avenir-Heavy.woff2"),
-        },
-        {
-          weight: "900",
-          style: "normal",
-          path: join(process.cwd(), "public", "fonts", "Avenir-Black.woff2"),
-        },
-      ],
-    },
-  ]}
-/>

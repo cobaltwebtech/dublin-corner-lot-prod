@@ -1,7 +1,9 @@
 ---
 
-import { Icon } from "astro-icon/components";
+
+
 import HomeButton from "@/components/HomeButton.astro";
+import InboxIcon from "@/icons/inbox.svg";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { SITE } from "@/lib/siteConfig";
 
@@ -10,7 +12,7 @@ const pageTitle: string = `Submission Received | ${SITE.title}`;
 
 <BaseLayout title={pageTitle} noIndex={true}>
   <section class="flex flex-col items-center gap-4 space-y-8 px-8 py-4">
-    <Icon name="inbox" class="text-accent size-36" />
+    <InboxIcon class="text-accent size-36" />
     <h1
       class="gradient-text text-center text-4xl font-black sm:text-6xl sm:leading-24"
     >

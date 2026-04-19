@@ -1,8 +1,10 @@
 ---
 
+
+
 import type { HTMLAttributes } from "astro/types";
-import { Icon } from "astro-icon/components";
 import { tv, type VariantProps } from "tailwind-variants";
+import ArrowDown from "@/icons/arrow-down.svg";
 
 type Props = Omit<HTMLAttributes<"button">, "role" | "type"> &
   VariantProps<typeof selectTrigger> & {
@@ -55,6 +57,6 @@ const { class: className, size, required = false, ...rest } = Astro.props;
 >
   <slot />
   <slot name="icon">
-    <Icon name="arrow-down" class="size-5" />
+    <ArrowDown class="size-5" />
   </slot>
 </button>
